@@ -10,14 +10,7 @@ import UIKit
 
 class ArrowShooter: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-    override func drawRect(rect: CGRect) {
+       override func drawRect(rect: CGRect) {
         let layerWidth = self.layer.frame.width
         let layerHeight = self.layer.frame.height
         

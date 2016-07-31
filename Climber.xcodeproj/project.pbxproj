@@ -12,6 +12,7 @@
 		5B0B72481D4BE02500903ABB /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B72471D4BE02500903ABB /* EndGameViewController.swift */; };
 		5B0B724A1D4C538000903ABB /* Spike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B72491D4C538000903ABB /* Spike.swift */; };
 		5B0B724C1D4C597C00903ABB /* ArrowShooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B724B1D4C597C00903ABB /* ArrowShooter.swift */; };
+		5B12BB431D4E7C730031F0F8 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B12BB421D4E7C730031F0F8 /* Arrow.swift */; };
 		D0B5C67C1D4BD0F10074EFBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5C67B1D4BD0F10074EFBE /* AppDelegate.swift */; };
 		D0B5C67E1D4BD0F10074EFBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5C67D1D4BD0F10074EFBE /* ViewController.swift */; };
 		D0B5C6811D4BD0F10074EFBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B5C67F1D4BD0F10074EFBE /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		5B0B72471D4BE02500903ABB /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		5B0B72491D4C538000903ABB /* Spike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spike.swift; sourceTree = "<group>"; };
 		5B0B724B1D4C597C00903ABB /* ArrowShooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowShooter.swift; sourceTree = "<group>"; };
+		5B12BB421D4E7C730031F0F8 /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		D0B5C6781D4BD0F10074EFBE /* Climber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B5C67B1D4BD0F10074EFBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0B5C67D1D4BD0F10074EFBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				5B0B72471D4BE02500903ABB /* EndGameViewController.swift */,
 				5B0B72491D4C538000903ABB /* Spike.swift */,
 				5B0B724B1D4C597C00903ABB /* ArrowShooter.swift */,
+				5B12BB421D4E7C730031F0F8 /* Arrow.swift */,
 				D0B5C67F1D4BD0F10074EFBE /* Main.storyboard */,
 				D0B5C6821D4BD0F20074EFBE /* Assets.xcassets */,
 				D0B5C6841D4BD0F20074EFBE /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B0B72461D4BE00E00903ABB /* GameViewController.swift in Sources */,
+				5B12BB431D4E7C730031F0F8 /* Arrow.swift in Sources */,
 				5B0B72441D4BDFEE00903ABB /* InstructionsViewController.swift in Sources */,
 				5B0B72481D4BE02500903ABB /* EndGameViewController.swift in Sources */,
 				D0B5C67E1D4BD0F10074EFBE /* ViewController.swift in Sources */,
