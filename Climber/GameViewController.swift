@@ -22,7 +22,8 @@ class GameViewController: UIViewController {
         view.addSubview(spike)
         arrowShooter = ArrowShooter(frame: CGRectMake(view.center.x, view.center.y, 30, 20))
         view.addSubview(arrowShooter)
-        arrow = Arrow(frame: CGRectMake(view.center.x - 20.0, view.center.y, 40, 20))
-        view.addSubview(arrow)
+        arrowShooter.reload(view)
+//        arrow = Arrow(frame: CGRectMake(view.center.x - 20.0, view.center.y, 40, 20))
+//        view.addSubview(arrow)
     }
 }

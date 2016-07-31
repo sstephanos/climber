@@ -9,8 +9,10 @@
 import UIKit
 
 class ArrowShooter: UIView {
+    
+    var arrow = Arrow()
 
-       override func drawRect(rect: CGRect) {
+    override func drawRect(rect: CGRect) {
         let layerWidth = self.layer.frame.width
         let layerHeight = self.layer.frame.height
         
@@ -46,4 +48,8 @@ class ArrowShooter: UIView {
     func commonInit() {
     }
 
+    func reload(view: UIView) {
+        arrow = Arrow(frame: CGRectMake(self.frame.minX - 20.0, self.frame.minY, 40, 20))
+        view.addSubview(arrow)
+    }
 }
