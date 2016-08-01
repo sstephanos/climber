@@ -52,4 +52,7 @@ class ArrowShooter: UIView {
         arrow = Arrow(frame: CGRectMake(self.frame.minX - 20.0, self.frame.minY, 40, 20))
         view.addSubview(arrow)
     }
+    
+    func shoot(view: UIView) {
+    }
 }
