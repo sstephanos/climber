@@ -55,17 +55,32 @@ class ArrowShooter: UIView {
     
     
     // Use this func to check if center of arrow, tip(minX), and target's center are in line
-    internal func checkInLine(pointOne: CGPoint, pointTwo: CGPoint, pointThree: CGPoint) -> Bool {
+    // This will also make sure that the arrow is not backwards
+    internal func checkInLineAndInOrder(pointOne: CGPoint, pointTwo: CGPoint, pointThree: CGPoint) -> String {
         let slope = (pointOne.y - pointTwo.y) / (pointOne.x - pointTwo.x)
         let yIntercept = pointOne.y - slope * pointOne.x
         if pointThree.y == slope * pointThree.x + yIntercept {
-            return true
+            let sideOneThreeLength = sqrt(
+                pow(pointOne.x - pointThree.x, 2) +
+                pow(pointOne.y - pointThree.y, 2)
+            )
+            let sideTwoThreeLength = sqrt(
+                pow(pointTwo.x - pointThree.x, 2) +
+                pow(pointTwo.y - pointThree.y, 2)
+            )
+            if sideOneThreeLength > sideTwoThreeLength {
+                return "yes"
+            } else {
+                return "backward"
+            }
         } else {
-            return false
+            return "no"
         }
     }
     
+    
     func shoot(targetView: UIView) {
+
         while arrow.collided == false {
             let targetPoint = targetView.center
             UIView.animateWithDuration(0.2, animations: {
@@ -85,14 +100,28 @@ class ArrowShooter: UIView {
                 } else {
                     self.arrow.center.y -= 3
                 }
-                //Below may need convertPoint to general view
-                if !(self.checkInLine(self.arrow.center, pointTwo: self.convertPoint(CGPointMake(self.arrow.frame.minX, self.arrow.center.y), toView: self.superview), pointThree: targetPoint)) {
-                    //Using trig
-                    let sideOneTwo = sqrt(
-                        pow(self.arrow.center.x - self.convertPoint(CGPointMake(self.arrow.frame.minX, self.arrow.center.y), toView: superview)).x, 2)
-                    )
                 
+                switch self.checkInLineAndInOrder(self.arrow.center, pointTwo: self.convertPoint(CGPointMake(self.arrow.frame.minX, self.arrow.center.y), toView: self.superview), pointThree: targetPoint) {
+                case "yes" : break
+                case "no" :
+                    //Distance formula
+                    let sideOneTwoLength = sqrt(
+                        pow(self.arrow.center.x - self.convertPoint(CGPointMake(self.arrow.frame.minX, self.arrow.center.y), toView: self.superview).x, 2) +
+                        pow(self.arrow.center.y - self.convertPoint(CGPointMake(self.arrow.frame.minX, self.arrow.center.y), toView: self.superview).y, 2)
+                    )
+                    let sideTwoThreeLength = sqrt(
+                        pow(self.convertPoint(CGPointMake(self.arrow.frame.minX, self.arrow.center.y), toView: self.superview).x - targetPoint.x, 2) +
+                        pow(self.convertPoint(CGPointMake(self.arrow.frame.minX, self.arrow.center.y), toView: self.superview).y - targetPoint.y, 2)
+                    )
+                    let sideThreeOneLength = sqrt(
+                        pow(targetPoint.x - self.arrow.center.x, 2) +
+                        pow(targetPoint.y - self.arrow.center.y, 2)
+                    )
+                    //Law of cosines to find the angle with the vertex of arrow.center
+                    let angleArrowCenter = acos((pow(sideTwoThreeLength, 2) - pow(sideThreeOneLength, 2) - pow(sideOneTwoLength, 2)) / (-2 * sideThreeOneLength * sideOneTwoLength))
                     
+                case "backward" : self.arrow.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+                default : break
                 }
             })
         }
