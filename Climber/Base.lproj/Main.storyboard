@@ -14,35 +14,55 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Climber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q84-Tn-U8a">
-                                <rect key="frame" x="270" y="20" width="60" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgp-1t-NbU">
-                                <rect key="frame" x="260" y="516" width="81" height="30"/>
-                                <state key="normal" title="Instructions"/>
-                                <connections>
-                                    <segue destination="dv8-El-TPX" kind="presentation" id="fMc-kk-dCn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQr-R5-H4R">
-                                <rect key="frame" x="285" y="446" width="30" height="30"/>
-                                <state key="normal" title="Play"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Climber" translatesAutoresizingMaskIntoConstraints="NO" id="I0b-0k-YUW">
+                                <rect key="frame" x="-1" y="0.0" width="415" height="739"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQr-R5-H4R">
+                                <rect key="frame" x="144" y="426" width="126" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="BMx-Xg-V0G"/>
+                                    <constraint firstAttribute="height" constant="57" id="CKw-mU-aSC"/>
+                                </constraints>
+                                <state key="normal" image="PlayButton"/>
                                 <connections>
                                     <segue destination="6cy-j9-gy2" kind="show" id="fqS-s3-MkJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Climber" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q84-Tn-U8a">
+                                <rect key="frame" x="71" y="20" width="270" height="53"/>
+                                <fontDescription key="fontDescription" name="Menlo-BoldItalic" family="Menlo" pointSize="60"/>
+                                <color key="textColor" red="0.15468999743461609" green="0.035016957670450211" blue="0.13895606994628906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.032247487455606461" green="0.92269331216812134" blue="0.95447260141372681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgp-1t-NbU">
+                                <rect key="frame" x="148" y="491" width="118" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="NE6-PY-IUH"/>
+                                    <constraint firstAttribute="width" constant="118" id="SBg-ny-kRl"/>
+                                </constraints>
+                                <state key="normal" image="InstructionButton"/>
+                                <connections>
+                                    <segue destination="dv8-El-TPX" kind="presentation" id="fMc-kk-dCn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I0b-0k-YUW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K7d-6F-5BE"/>
+                            <constraint firstItem="q84-Tn-U8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bS1-fl-IN9"/>
+                            <constraint firstItem="FQr-R5-H4R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cHP-Yn-S1J"/>
+                            <constraint firstItem="wgp-1t-NbU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qBD-cd-upk"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="387"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="j4K-vH-pMh">
@@ -53,7 +73,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dE6-pL-Dbl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7OE-dv-xn1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -99,14 +119,43 @@
                         <viewControllerLayoutGuide type="bottom" id="VdA-pA-1Sb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="04U-OH-bxv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="InstructionsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Yig-rN-fwR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM9-Df-6Bh">
+                                <rect key="frame" x="67" y="36" width="280" height="49"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="48"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.95585328340530396" green="0.080230526626110077" blue="0.12556415796279907" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6C-bO-4i9">
+                                <rect key="frame" x="87" y="93" width="240" height="643"/>
+                                <mutableString key="text">Welcome to Climber and thank you for playing! Climber is simple and made so just about everyone is able to play and enjoy it too! When you arrive in the game, we suggest you hit the play button because you're here for a reason and that's to play, so we think it's best that you do that first. Once in the game, the climber (actually just a dot) will move up the screen while encounter dangerous objects and obstacles along the way. When you encounter these objects, swipe to jump to avoid or evade them. Beware, the game gets increasingly faster! Your score will climb as time passes and will be displayed once you eventually succomb to the perils of climbing. Have fun and keep climbing!! </mutableString>
+                                <color key="textColor" red="0.1821381151676178" green="0.089553661644458771" blue="0.62237459421157837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EM9-Df-6Bh" firstAttribute="centerX" secondItem="04U-OH-bxv" secondAttribute="centerX" id="6Ig-hR-yiW"/>
+                            <constraint firstItem="Yig-rN-fwR" firstAttribute="centerX" secondItem="04U-OH-bxv" secondAttribute="centerX" id="q6k-ul-iEk"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tW-kw-C86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="1133"/>
+            <point key="canvasLocation" x="305" y="1317"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Climber" width="332" height="400"/>
+        <image name="InstructionButton" width="600" height="192"/>
+        <image name="InstructionsBackground" width="236" height="418"/>
+        <image name="PlayButton" width="350" height="150"/>
+    </resources>
 </document>
