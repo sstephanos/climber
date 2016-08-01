@@ -10,6 +10,11 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var scoreCounterLabel: UILabel!
+   
+    
+    var score = 0
+    
     var dynamicAnimator = UIDynamicAnimator()
     
     var spike = Spike()
@@ -24,5 +29,14 @@ class GameViewController: UIViewController {
         view.addSubview(arrowShooter)
         arrow = Arrow(frame: CGRectMake(view.center.x - 20.0, view.center.y, 40, 20))
         view.addSubview(arrow)
+        
+        let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "increment", userInfo: nil, repeats: true)
     }
+    
+    
+    func increment() {
+        score += 1
+        scoreCounterLabel.text = String(score)
+    }
+    
 }
