@@ -29,7 +29,7 @@
                                 <color key="shadowColor" red="0.023788480088114738" green="0.011427443474531174" blue="0.027950730174779892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgp-1t-NbU">
-                                <rect key="frame" x="102" y="334" width="210" height="80"/>
+                                <rect key="frame" x="102" y="346" width="210" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="NE6-PY-IUH"/>
                                     <constraint firstAttribute="width" constant="118" id="SBg-ny-kRl"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQr-R5-H4R">
-                                <rect key="frame" x="144" y="303" width="126" height="57"/>
+                                <rect key="frame" x="144" y="281" width="126" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="126" id="BMx-Xg-V0G"/>
                                     <constraint firstAttribute="height" constant="57" id="CKw-mU-aSC"/>
@@ -56,11 +56,11 @@
                             <constraint firstItem="I0b-0k-YUW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-198" id="1Li-45-6dL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I0b-0k-YUW" secondAttribute="trailing" constant="-86" id="HSu-Fz-OJX"/>
                             <constraint firstItem="I0b-0k-YUW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K7d-6F-5BE"/>
+                            <constraint firstItem="wgp-1t-NbU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lrr-CI-g6i"/>
                             <constraint firstAttribute="bottomMargin" secondItem="I0b-0k-YUW" secondAttribute="bottom" constant="-74" id="R6N-g8-Keo"/>
                             <constraint firstItem="q84-Tn-U8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bS1-fl-IN9"/>
                             <constraint firstItem="FQr-R5-H4R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cHP-Yn-S1J"/>
                             <constraint firstItem="I0b-0k-YUW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-38" id="ddz-mi-fUh"/>
-                            <constraint firstItem="wgp-1t-NbU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qBD-cd-upk"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -81,20 +81,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmN-cS-Gqr">
-                                <rect key="frame" x="182" y="20" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-7f-G3b">
-                                <rect key="frame" x="182" y="49" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-7f-G3b">
+                                <rect key="frame" x="172" y="28" width="70" height="55"/>
+                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3nj-7f-G3b" firstAttribute="centerX" secondItem="7OE-dv-xn1" secondAttribute="centerX" placeholder="YES" id="r5u-Xv-Uti"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="scoreCounterLabel" destination="3nj-7f-G3b" id="hUd-QN-L7f"/>
