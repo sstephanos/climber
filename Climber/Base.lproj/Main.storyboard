@@ -78,16 +78,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="oMp-wd-mVf" appends="YES" id="Exi-EM-2jm"/>
                             <outletCollection property="gestureRecognizers" destination="ARu-5P-ztK" appends="YES" id="HhF-qm-PX3"/>
                         </connections>
                     </view>
-                    <connections>
-                        <outlet property="swipeLeft" destination="oMp-wd-mVf" id="8Xr-5E-pVq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nz-mo-qtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="oMp-wd-mVf"/>
                 <swipeGestureRecognizer direction="right" id="ARu-5P-ztK"/>
             </objects>
             <point key="canvasLocation" x="1068" y="350"/>
@@ -134,7 +129,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6C-bO-4i9">
                                 <rect key="frame" x="87" y="93" width="240" height="643"/>
-                                <mutableString key="text">Welcome to Climber and thank you for playing! Climber is simple and made so just about everyone is able to play and enjoy it too! When you arrive in the game, we suggest you hit the play button because you're here for a reason and that's to play, so we think it's best that you do that first. Once in the game, the climber (actually just a dot) will move up the screen while encounter dangerous objects and obstacles along the way. When you encounter these objects, swipe to jump to avoid or evade them. Beware, the game gets increasingly faster! Your score will climb as time passes and will be displayed once you eventually succomb to the perils of climbing. Have fun and keep climbing!! </mutableString>
+                                <string key="text">Welcome to Climber and thank you for playing! Climber is simple and made so just about everyone is able to play and enjoy it too! When you arrive in the game, we suggest you hit the play button because you're here for a reason and that's to play, so we think it's best that you do that first. Once in the game, the climber (actually just a dot) will move up the screen while encounter dangerous objects and obstacles along the way. When you encounter these objects, swipe to jump to avoid or evade them. Beware, the game gets increasingly faster! Your score will climb as time passes and will be displayed once you eventually succomb to the perils of climbing. Have fun and keep climbing!! </string>
                                 <color key="textColor" red="0.1821381151676178" green="0.089553661644458771" blue="0.62237459421157837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
