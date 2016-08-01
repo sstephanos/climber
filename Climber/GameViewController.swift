@@ -47,7 +47,6 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior.collisionDelegate = self
         dynamicAnimator.addBehavior(collisionBehavior)
         
-        
         spikeDynamicBehavior.addItem(spike)
         arrowShooterDynamicBehavior.addItem(arrowShooter)
         arrowDynamicBehavior.addItem(arrowShooter.arrow)
