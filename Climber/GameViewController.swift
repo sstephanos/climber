@@ -8,14 +8,21 @@
 
 import UIKit
 
-class GameViewController: UIViewController, UICollisionBehaviorDelegate {
+class GameViewController: UIViewController, UICollisionBehaviorDelegate,
+    UISwipeGestureRecognizer,
+    
+    {
+    
+    @IBOutlet var swipeLeft: UISwipeGestureRecognizer!
     
     var dynamicAnimator = UIDynamicAnimator()
     var collisionBehavior = UICollisionBehavior()
     
     var spike = Spike()
     var arrowShooter = ArrowShooter()
-
+    var ball = UIView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,5 +58,39 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         spikeDynamicBehavior.addItem(spike)
         arrowShooterDynamicBehavior.addItem(arrowShooter)
         arrowDynamicBehavior.addItem(arrowShooter.arrow)
+        
+        
+        //Ball Object
+        ball = UIView(frame: CGRectMake(view.center.x, view.center.y, 20, 20))
+        ball.backgroundColor = UIColor.blackColor()
+        ball.layer.cornerRadius = 10
+        ball.clipsToBounds = true
+        view.addSubview(ball)
+       
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+    
+    
     }
+    
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .Left) {
+            print("Swipe Left")
+            var labelPosition = CGPointMake(self.swipeLabel.frame.origin.x - 50.0, self.swipeLabel.frame.origin.y);
+            swipeLabel.frame = CGRectMake( labelPosition.x , labelPosition.y , self.swipeLabel.frame.size.width, self.swipeLabel.frame.size.height)
+        }
+        
+        if (sender.direction == .Right) {
+            print("Swipe Right")
+            var labelPosition = CGPointMake(self.swipeLabel.frame.origin.x + 50.0, self.swipeLabel.frame.origin.y);
+            swipeLabel.frame = CGRectMake( labelPosition.x , labelPosition.y , self.swipeLabel.frame.size.width, self.swipeLabel.frame.size.height)
+        }
+    }
+    
 }
