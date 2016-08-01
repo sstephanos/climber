@@ -19,7 +19,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        spike = Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20))
+        spike = Spike(frame: CGRectMake(view.center.x * 0.2, view.center.y, 40, 20))
         view.addSubview(spike)
         
         arrowShooter = ArrowShooter(frame: CGRectMake(view.center.x, view.center.y, 30, 20))
@@ -50,5 +50,20 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         spikeDynamicBehavior.addItem(spike)
         arrowShooterDynamicBehavior.addItem(arrowShooter)
         arrowDynamicBehavior.addItem(arrowShooter.arrow)
+        collisionBehavior.addItem(arrowShooter.arrow)
+        
+        
+        //arrowShooter.shoot(spike, dynamicAnimator: dynamicAnimator)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        arrowShooter.shoot(spike, dynamicAnimator: dynamicAnimator)
+    }
+    
+    func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem, atPoint p: CGPoint) {
+        if (item1 is Arrow && item2 is UIView) || (item2 is Arrow && item1 is UIView) {
+            arrowShooter.arrow.collided = true
+        }
     }
 }
