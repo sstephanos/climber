@@ -85,7 +85,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nz-mo-qtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="ARu-5P-ztK"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="350"/>
+            <point key="canvasLocation" x="1068" y="342"/>
         </scene>
         <!--End Game View Controller-->
         <scene sceneID="efg-CQ-pEt">
