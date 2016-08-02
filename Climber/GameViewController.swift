@@ -30,10 +30,6 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        spike = Spike(frame: CGRectMake(view.center.x * 0.2, view.center.y, 40, 20))
-        view.addSubview(spike)
-        
-        
         let spikeDynamicBehavior = UIDynamicItemBehavior(items: [])
         spikeDynamicBehavior.anchored = true
         spikeDynamicBehavior.allowsRotation = false
@@ -55,24 +51,90 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior.collisionDelegate = self
         dynamicAnimator.addBehavior(collisionBehavior)
         
-        spikeDynamicBehavior.addItem(spike)
-        arrowShooterDynamicBehavior.addItem(arrowShooter)
-        arrowDynamicBehavior.addItem(arrowShooter.arrow)
-        collisionBehavior.addItem(arrowShooter.arrow)
+        //=======================
+        // Create spikes and spawn chance
+        //=======================
         
-        
-        //arrowShooter.shoot(spike, dynamicAnimator: dynamicAnimator)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        arrowShooter.shoot(spike, dynamicAnimator: dynamicAnimator)
-    }
-    
-    func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem, atPoint p: CGPoint) {
-        if (item1 is Arrow && item2 is UIView) || (item2 is Arrow && item1 is UIView) {
-            arrowShooter.arrow.collided = true
+        // Seven spike limit on screen
+        for _ in 0...9 {
+            spikes.append(Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20)))
         }
+        
+        for spike in spikes {
+            spikeDynamicBehavior.addItem(spike)
+            collisionBehavior.addItem(spike)
+        }
+        // Spike chance for spawn, multiplied w/number of spikes because every spike is checked with the same chance
+        spikeSpawnChance = 5
+        
+        //================
+        //Wall Objects
+        //================
+        
+        wall1 = UIView(frame: CGRectMake(0, 0, view.frame.width / 4, view.frame.height))
+        wall1.backgroundColor = UIColor.grayColor()
+        view.addSubview(wall1)
+        
+        
+        wall2 = UIView(frame: CGRectMake(view.frame.width * 0.75 , 0, view.frame.width / 4, view.frame.height))
+        wall2.backgroundColor = UIColor.grayColor()
+        view.addSubview(wall2)
+        
+        
+        //Wall1 Dynamic Behavior
+        let wall1DynamicBehavior = UIDynamicItemBehavior(items: [wall1])
+        wall1DynamicBehavior.density = 10000
+        wall1DynamicBehavior.resistance = 100
+        wall1DynamicBehavior.allowsRotation = false
+        dynamicAnimator.addBehavior(wall1DynamicBehavior)
+        
+        //Wall2 Dynamic Behavior
+        let wall2DynamicBehavior = UIDynamicItemBehavior(items: [wall2])
+        wall2DynamicBehavior.density = 10000
+        wall2DynamicBehavior.resistance = 100
+        wall2DynamicBehavior.allowsRotation = false
+        dynamicAnimator.addBehavior(wall2DynamicBehavior)
+        
+        
+        
+        
+        //===========
+        //Ball Object
+        //===========
+        
+        ball = UIView(frame: CGRectMake(view.center.x - view.frame.width / 4.07, view.frame.width + 150, 26, 26))
+        ball.backgroundColor = UIColor.blackColor()
+        ball.layer.cornerRadius = 13
+        ball.clipsToBounds = true
+        view.addSubview(ball)
+        
+        //Ball Dynamic Behavior
+        let ballDynamicBehavior = UIDynamicItemBehavior(items: [ball])
+        ballDynamicBehavior.friction = 0
+        ballDynamicBehavior.resistance = 0
+        ballDynamicBehavior.elasticity = 0
+        ballDynamicBehavior.allowsRotation = false
+        dynamicAnimator.addBehavior(ballDynamicBehavior)
+        
+        //================
+        // Swipe Variables
+        //================
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.handleSwipes(_:)))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+        
+        
+        let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(GameViewController.increment), userInfo: nil, repeats: true)
+        
+        let spikeRightWallTimer = NSTimer.scheduledTimerWithTimeInterval(0.35, target: self, selector: #selector(GameViewController.spikeRightWallRandomSpawn), userInfo: nil, repeats: true)
+        
+        let spikeLeftWallTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.spikeLeftWallTimedSpawn), userInfo: nil, repeats: true)
     }
     
     //================================
