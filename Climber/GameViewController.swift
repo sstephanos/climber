@@ -34,14 +34,6 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         // Spike and Arrow Logic
         //=======================
         
-        //        spike = Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20))
-        //        view.addSubview(spike)
-        //
-        //        arrowShooter = ArrowShooter(frame: CGRectMake(view.center.x, view.center.y, 30, 20))
-        //        view.addSubview(arrowShooter)
-        //        arrowShooter.reload(view)
-        
-        
         let spikeDynamicBehavior = UIDynamicItemBehavior(items: [])
         spikeDynamicBehavior.anchored = true
         spikeDynamicBehavior.allowsRotation = false
@@ -63,11 +55,6 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior.collisionDelegate = self
         dynamicAnimator.addBehavior(collisionBehavior)
         
-        
-        //        spikeDynamicBehavior.addItem(spike)
-        //        arrowShooterDynamicBehavior.addItem(arrowShooter)
-        //        arrowDynamicBehavior.addItem(arrowShooter.arrow)
-        
         //=======================
         // Create spikes and spawn chance
         //=======================
@@ -81,7 +68,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
             spikeDynamicBehavior.addItem(spike)
             collisionBehavior.addItem(spike)
         }
-        // Spike chance for spawn
+        // Spike chance for spawn, multiplied w/number of spikes because every spike is checked with the same chance
         spikeSpawnChance = 5
         
         //================
@@ -137,8 +124,8 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         // Swipe Variables
         //================
         
-        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.handleSwipes(_:)))
         
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
@@ -147,11 +134,11 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         view.addGestureRecognizer(rightSwipe)
         
         
-        let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "increment", userInfo: nil, repeats: true)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(GameViewController.increment), userInfo: nil, repeats: true)
         
-        let spikeRightWallTimer = NSTimer.scheduledTimerWithTimeInterval(0.35, target: self, selector: "spikeRightWallRandomSpawn", userInfo: nil, repeats: true)
+        let spikeRightWallTimer = NSTimer.scheduledTimerWithTimeInterval(0.35, target: self, selector: #selector(GameViewController.spikeRightWallRandomSpawn), userInfo: nil, repeats: true)
         
-        let spikeLeftWallTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "spikeLeftWallTimedSpawn", userInfo: nil, repeats: true)
+        let spikeLeftWallTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.spikeLeftWallTimedSpawn), userInfo: nil, repeats: true)
     }
     
     //================================
@@ -162,7 +149,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Left) {
             if (!canSwipeLeft) { return }
             print("Swipe Left")
-            var ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y);
+            let ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y);
             
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
@@ -177,7 +164,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Right) {
             if (!canSwipeRight) { return }
             print("Swipe Right")
-            var ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y);
+            let ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y);
             
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
