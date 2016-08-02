@@ -12,6 +12,11 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
     
     {
     
+    @IBOutlet weak var scoreCounterLabel: UILabel!
+   
+    
+    var score = 0
+    
     var dynamicAnimator = UIDynamicAnimator()
     var collisionBehavior = UICollisionBehavior()
     
