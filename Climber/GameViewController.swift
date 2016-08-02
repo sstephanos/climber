@@ -83,7 +83,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Left) {
             if (!canSwipeLeft) { return }
             print("Swipe Left")
-            var ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y);
+            let ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y);
             
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
@@ -98,7 +98,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Right) {
             if (!canSwipeRight) { return }
             print("Swipe Right")
-            var ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y);
+            let ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y);
             
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
@@ -137,9 +137,27 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                         }, completion: { (completed) in
                             spike.spawned = false
                     })
+                    break
                 }
             }
         }
     }
     
+    func spikeLeftWallTimedSpawn() {
+        for spike in spikes {
+            if spike.spawned == false {
+                spike.spawned = true
+                spike.center = CGPoint(x: view.frame.width / 4 + spike.frame.width / 2, y: 0)
+                //spike.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+                view.addSubview(spike)
+                UIView.animateWithDuration(2.0, animations: {
+                    spike.center.y = self.view.frame.height + spike.frame.height / 2
+                    self.dynamicAnimator.updateItemUsingCurrentState(spike)
+                    }, completion: { (completed) in
+                        spike.spawned = false
+                })
+                break
+            }
+        }
+    }
 }
