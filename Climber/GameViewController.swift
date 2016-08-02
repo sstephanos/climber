@@ -24,6 +24,8 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     var ball = UIView()
     var wall1 = UIView()
     var wall2 = UIView()
+    var canSwipeLeft = false
+    var canSwipeRight = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +34,12 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         // Spike and Arrow Logic
         //=======================
         
-//        spike = Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20))
-//        view.addSubview(spike)
-//        
-//        arrowShooter = ArrowShooter(frame: CGRectMake(view.center.x, view.center.y, 30, 20))
-//        view.addSubview(arrowShooter)
-//        arrowShooter.reload(view)
+        //        spike = Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20))
+        //        view.addSubview(spike)
+        //
+        //        arrowShooter = ArrowShooter(frame: CGRectMake(view.center.x, view.center.y, 30, 20))
+        //        view.addSubview(arrowShooter)
+        //        arrowShooter.reload(view)
         
         
         let spikeDynamicBehavior = UIDynamicItemBehavior(items: [])
@@ -62,9 +64,9 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicAnimator.addBehavior(collisionBehavior)
         
         
-//        spikeDynamicBehavior.addItem(spike)
-//        arrowShooterDynamicBehavior.addItem(arrowShooter)
-//        arrowDynamicBehavior.addItem(arrowShooter.arrow)
+        //  spikeDynamicBehavior.addItem(spike)
+        //        arrowShooterDynamicBehavior.addItem(arrowShooter)
+        //        arrowDynamicBehavior.addItem(arrowShooter.arrow)
         
         //=======================
         // Spike Spawning Logic
@@ -98,15 +100,41 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         wall2.backgroundColor = UIColor.grayColor()
         view.addSubview(wall2)
         
+        
+        //Wall1 Dynamic Behavior
+        let wall1DynamicBehavior = UIDynamicItemBehavior(items: [wall1])
+        wall1DynamicBehavior.density = 10000
+        wall1DynamicBehavior.resistance = 100
+        wall1DynamicBehavior.allowsRotation = false
+        dynamicAnimator.addBehavior(wall1DynamicBehavior)
+        
+        //Wall2 Dynamic Behavior
+        let wall2DynamicBehavior = UIDynamicItemBehavior(items: [wall2])
+        wall2DynamicBehavior.density = 10000
+        wall2DynamicBehavior.resistance = 100
+        wall2DynamicBehavior.allowsRotation = false
+        dynamicAnimator.addBehavior(wall2DynamicBehavior)
+        
+        
+        
+        
         //===========
         //Ball Object
         //===========
         
-        ball = UIView(frame: CGRectMake(view.center.x - view.frame.width / 4, view.frame.width + 150, 26, 26))
+        ball = UIView(frame: CGRectMake(view.center.x - view.frame.width / 4.07, view.frame.width + 150, 26, 26))
         ball.backgroundColor = UIColor.blackColor()
         ball.layer.cornerRadius = 13
         ball.clipsToBounds = true
         view.addSubview(ball)
+        
+        //Ball Dynamic Behavior
+        let ballDynamicBehavior = UIDynamicItemBehavior(items: [ball])
+        ballDynamicBehavior.friction = 0
+        ballDynamicBehavior.resistance = 0
+        ballDynamicBehavior.elasticity = 0
+        ballDynamicBehavior.allowsRotation = false
+        dynamicAnimator.addBehavior(ballDynamicBehavior)
         
         //================
         // Swipe Variables
@@ -131,25 +159,35 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Left) {
+            if (!canSwipeLeft) { return }
             print("Swipe Left")
             var ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y);
             
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
+                
+                self.canSwipeLeft = false
+                self.canSwipeRight = true
+                
             })
             
         }
         
         if (sender.direction == .Right) {
+            if (!canSwipeRight) { return }
             print("Swipe Right")
             var ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y);
+            
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
+                
+                self.canSwipeLeft = true
+                self.canSwipeRight = false
+                
             })
+            
         }
-        
     }
-    
     //================================
     // Time Label Function
     //================================
@@ -166,4 +204,5 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     func obstacleSpawn(spawnChance: Int, obstacle: UIView) {
         
     }
+    
 }
