@@ -69,7 +69,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         //        arrowDynamicBehavior.addItem(arrowShooter.arrow)
         
         //=======================
-        // Spike Spawning Logic
+        // Create spikes and spawn chance
         //=======================
         
         // Seven spike limit on screen
@@ -82,10 +82,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
             collisionBehavior.addItem(spike)
         }
         // Spike chance for spawn
-        spikeSpawnChance = 15
-        
-        
-        
+        spikeSpawnChance = 50
         
         //================
         //Wall Objects
@@ -151,6 +148,8 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         
         
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "increment", userInfo: nil, repeats: true)
+        
+        let spikeTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "spikeRightWallRandomSpawn", userInfo: nil, repeats: true)
     }
     
     //================================
@@ -201,8 +200,23 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     // Spike spawning function
     //================================
     
-    func obstacleSpawn(spawnChance: Int, obstacle: UIView) {
-        
+    func spikeRightWallRandomSpawn() {
+        for spike in spikes {
+            if spike.spawned == false {
+                let spawnChanceRange = Int(arc4random_uniform(100))
+                if spawnChanceRange < spikeSpawnChance {
+                    spike.spawned = true
+                    spike.center = CGPoint(x: 3 * view.frame.width / 4 - spike.frame.width / 2, y: 0)
+                    view.addSubview(spike)
+                    UIView.animateWithDuration(2.0, animations: {
+                        spike.center.y = self.view.frame.height + spike.frame.height / 2
+                        self.dynamicAnimator.updateItemUsingCurrentState(spike)
+                        }, completion: { (completed) in
+                            spike.spawned = false
+                    })
+                }
+            }
+        }
     }
     
 }
