@@ -9,6 +9,8 @@
 import UIKit
 
 class Spike: UIView {
+    
+    var spawned = false
 
     override func drawRect(rect: CGRect) {
         let layerHeight = self.layer.frame.height
@@ -41,5 +43,7 @@ class Spike: UIView {
     
     func commonInit() {
     }
+    
+    
 
 }
