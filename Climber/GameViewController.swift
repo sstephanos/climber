@@ -32,12 +32,12 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         // Spike and Arrow Logic
         //=======================
         
-//        spike = Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20))
-//        view.addSubview(spike)
-//        
-//        arrowShooter = ArrowShooter(frame: CGRectMake(view.center.x, view.center.y, 30, 20))
-//        view.addSubview(arrowShooter)
-//        arrowShooter.reload(view)
+        //        spike = Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20))
+        //        view.addSubview(spike)
+        //
+        //        arrowShooter = ArrowShooter(frame: CGRectMake(view.center.x, view.center.y, 30, 20))
+        //        view.addSubview(arrowShooter)
+        //        arrowShooter.reload(view)
         
         
         let spikeDynamicBehavior = UIDynamicItemBehavior(items: [])
@@ -62,16 +62,16 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicAnimator.addBehavior(collisionBehavior)
         
         
-//        spikeDynamicBehavior.addItem(spike)
-//        arrowShooterDynamicBehavior.addItem(arrowShooter)
-//        arrowDynamicBehavior.addItem(arrowShooter.arrow)
+        //        spikeDynamicBehavior.addItem(spike)
+        //        arrowShooterDynamicBehavior.addItem(arrowShooter)
+        //        arrowDynamicBehavior.addItem(arrowShooter.arrow)
         
         //=======================
         // Create spikes and spawn chance
         //=======================
         
         // Seven spike limit on screen
-        for _ in 0...6 {
+        for _ in 0...9 {
             spikes.append(Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20)))
         }
         
@@ -80,7 +80,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
             collisionBehavior.addItem(spike)
         }
         // Spike chance for spawn
-        spikeSpawnChance = 50
+        spikeSpawnChance = 5
         
         //================
         //Wall Objects
@@ -121,7 +121,9 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "increment", userInfo: nil, repeats: true)
         
-        let spikeTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "spikeRightWallRandomSpawn", userInfo: nil, repeats: true)
+        let spikeRightWallTimer = NSTimer.scheduledTimerWithTimeInterval(0.35, target: self, selector: "spikeRightWallRandomSpawn", userInfo: nil, repeats: true)
+        
+        let spikeLeftWallTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "spikeLeftWallTimedSpawn", userInfo: nil, repeats: true)
     }
     
     //================================
@@ -176,7 +178,26 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                         }, completion: { (completed) in
                             spike.spawned = false
                     })
+                    break
                 }
+            }
+        }
+    }
+    
+    func spikeLeftWallTimedSpawn() {
+        for spike in spikes {
+            if spike.spawned == false {
+                spike.spawned = true
+                spike.center = CGPoint(x: view.frame.width / 4 + spike.frame.width / 2, y: 0)
+                //spike.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+                view.addSubview(spike)
+                UIView.animateWithDuration(2.0, animations: {
+                    spike.center.y = self.view.frame.height + spike.frame.height / 2
+                    self.dynamicAnimator.updateItemUsingCurrentState(spike)
+                    }, completion: { (completed) in
+                        spike.spawned = false
+                })
+                break
             }
         }
     }
