@@ -76,12 +76,12 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         //================
         
         wall1 = UIView(frame: CGRectMake(0, 0, view.frame.width / 4, view.frame.height))
-        wall1.backgroundColor = UIColor.grayColor()
+        wall1.backgroundColor = UIColor.darkGrayColor()
         view.addSubview(wall1)
         
         
         wall2 = UIView(frame: CGRectMake(view.frame.width * 0.75 , 0, view.frame.width / 4, view.frame.height))
-        wall2.backgroundColor = UIColor.grayColor()
+        wall2.backgroundColor = UIColor.darkGrayColor()
         view.addSubview(wall2)
         
         
@@ -107,7 +107,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         //===========
         
         ball = UIView(frame: CGRectMake(view.center.x - view.frame.width / 4.07, view.frame.width + 150, 26, 26))
-        ball.backgroundColor = UIColor.blackColor()
+        ball.backgroundColor = UIColor.whiteColor()
         ball.layer.cornerRadius = 13
         ball.clipsToBounds = true
         view.addSubview(ball)
