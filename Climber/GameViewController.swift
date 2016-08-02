@@ -8,19 +8,18 @@
 
 import UIKit
 
-class GameViewController: UIViewController, UICollisionBehaviorDelegate
-    
-    {
+class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     
     @IBOutlet weak var scoreCounterLabel: UILabel!
-   
+    
     
     var score = 0
     
     var dynamicAnimator = UIDynamicAnimator()
     var collisionBehavior = UICollisionBehavior()
     
-    var spike = Spike()
+    var spikes: [Spike] = []
+    var spikeSpawnChance = 0
     var arrowShooter = ArrowShooter()
     var ball = UIView()
     var wall1 = UIView()
@@ -33,12 +32,13 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
         // Spike and Arrow Logic
         //=======================
         
-        spike = Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20))
-        view.addSubview(spike)
+//        spike = Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20))
+//        view.addSubview(spike)
+//        
+//        arrowShooter = ArrowShooter(frame: CGRectMake(view.center.x, view.center.y, 30, 20))
+//        view.addSubview(arrowShooter)
+//        arrowShooter.reload(view)
         
-        arrowShooter = ArrowShooter(frame: CGRectMake(view.center.x, view.center.y, 30, 20))
-        view.addSubview(arrowShooter)
-        arrowShooter.reload(view)
         
         let spikeDynamicBehavior = UIDynamicItemBehavior(items: [])
         spikeDynamicBehavior.anchored = true
@@ -62,10 +62,29 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
         dynamicAnimator.addBehavior(collisionBehavior)
         
         
-        spikeDynamicBehavior.addItem(spike)
-        arrowShooterDynamicBehavior.addItem(arrowShooter)
-        arrowDynamicBehavior.addItem(arrowShooter.arrow)
-       
+//        spikeDynamicBehavior.addItem(spike)
+//        arrowShooterDynamicBehavior.addItem(arrowShooter)
+//        arrowDynamicBehavior.addItem(arrowShooter.arrow)
+        
+        //=======================
+        // Spike Spawning Logic
+        //=======================
+        
+        // Seven spike limit on screen
+        for _ in 0...6 {
+            spikes.append(Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20)))
+        }
+        
+        for spike in spikes {
+            spikeDynamicBehavior.addItem(spike)
+            collisionBehavior.addItem(spike)
+        }
+        // Spike chance for spawn
+        spikeSpawnChance = 15
+        
+        
+        
+        
         //================
         //Wall Objects
         //================
@@ -78,7 +97,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
         wall2 = UIView(frame: CGRectMake(view.frame.width * 0.75 , 0, view.frame.width / 4, view.frame.height))
         wall2.backgroundColor = UIColor.grayColor()
         view.addSubview(wall2)
-
+        
         //===========
         //Ball Object
         //===========
@@ -101,9 +120,11 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
         
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
-    
-    
+        
+        
+        let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "increment", userInfo: nil, repeats: true)
     }
+    
     //================================
     // Actual Swipe Direction Function
     //================================
@@ -126,6 +147,23 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
             })
         }
+        
     }
     
+    //================================
+    // Time Label Function
+    //================================
+    
+    func increment() {
+        score += 1
+        scoreCounterLabel.text = String(score)
+    }
+    
+    //================================
+    // Spike spawning function
+    //================================
+    
+    func obstacleSpawn(spawnChance: Int, obstacle: UIView) {
+        
+    }
 }
