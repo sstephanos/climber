@@ -43,9 +43,6 @@
                                     <segue destination="dv8-El-TPX" kind="show" id="iYX-5n-bj7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WhiteDot" translatesAutoresizingMaskIntoConstraints="NO" id="Mm6-wn-O68">
-                                <rect key="frame" x="157" y="256" width="22" height="22"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Climber" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q84-Tn-U8a">
                                 <rect key="frame" x="3" y="228" width="408" height="136"/>
                                 <fontDescription key="fontDescription" name="Menlo-BoldItalic" family="Menlo" pointSize="72"/>
@@ -53,11 +50,20 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.023788480088114738" green="0.011427443474531174" blue="0.027950730174779892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="WhiteDot" translatesAutoresizingMaskIntoConstraints="NO" id="Mm6-wn-O68">
+                                <rect key="frame" x="157" y="256" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="2Rj-3T-1vY"/>
+                                    <constraint firstAttribute="height" constant="22" id="I0l-be-wdx"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c4q-qH-szn" secondAttribute="bottom" constant="8" id="4Jx-Rz-B6R"/>
+                            <constraint firstItem="FQr-R5-H4R" firstAttribute="top" secondItem="Mm6-wn-O68" secondAttribute="bottom" constant="79" id="6NH-2d-lfx"/>
                             <constraint firstItem="c4q-qH-szn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="B4r-81-wrB"/>
+                            <constraint firstItem="Mm6-wn-O68" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="137" id="BdS-aG-Y6P"/>
                             <constraint firstItem="FQr-R5-H4R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cHP-Yn-S1J"/>
                             <constraint firstItem="q84-Tn-U8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sZt-dh-7OF"/>
                         </constraints>
