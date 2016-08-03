@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -84,7 +84,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-7f-G3b">
                                 <rect key="frame" x="172" y="20" width="91" height="77"/>
                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
-                                <color key="textColor" red="0.072577111423015594" green="0.064559228718280792" blue="0.85793113708496094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.96785013090000005" green="0.96785013090000005" blue="0.96785013090000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -95,6 +95,7 @@
                     </view>
                     <connections>
                         <outlet property="scoreCounterLabel" destination="3nj-7f-G3b" id="hUd-QN-L7f"/>
+                        <segue destination="cO9-Ab-bHd" kind="show" identifier="EndGame" id="1sN-qF-sMa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nz-mo-qtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -111,7 +112,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AvP-G6-wn6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bTE-o7-lHn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="InstructionsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8Mv-vJ-5PB">
