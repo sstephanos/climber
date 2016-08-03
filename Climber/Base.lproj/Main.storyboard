@@ -95,6 +95,7 @@
                     </view>
                     <connections>
                         <outlet property="scoreCounterLabel" destination="3nj-7f-G3b" id="hUd-QN-L7f"/>
+                        <segue destination="cO9-Ab-bHd" kind="show" identifier="EndGame" id="1sN-qF-sMa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nz-mo-qtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -111,7 +112,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AvP-G6-wn6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bTE-o7-lHn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="InstructionsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8Mv-vJ-5PB">
@@ -175,7 +176,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6C-bO-4i9">
                                 <rect key="frame" x="87" y="93" width="240" height="643"/>
-                                <mutableString key="text">Welcome to Climber and thank you for playing! Climber is simple and made so just about everyone is able to play and enjoy it too! When you arrive in the game, we suggest you hit the play button because you're here for a reason and that's to play, so we think it's best that you do that first. Once in the game, the climber will begin move up the walls on either side of the screen, along the way there will be trecherous objects to avoud. When you encounter these objects, swipe to jump to avoid. Beware, the game gets harder at any moment! Your score will climb as time passes and don't forget to have fun and keep climbing!! </mutableString>
+                                <string key="text">Welcome to Climber and thank you for playing! Climber is simple and made so just about everyone is able to play and enjoy it too! When you arrive in the game, we suggest you hit the play button because you're here for a reason and that's to play, so we think it's best that you do that first. Once in the game, the climber will begin move up the walls on either side of the screen, along the way there will be trecherous objects to avoud. When you encounter these objects, swipe to jump to avoid. Beware, the game gets harder at any moment! Your score will climb as time passes and don't forget to have fun and keep climbing!! </string>
                                 <color key="textColor" red="0.1821381151676178" green="0.089553661644458771" blue="0.62237459421157837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
