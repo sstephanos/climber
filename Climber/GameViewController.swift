@@ -55,9 +55,9 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior.collisionDelegate = self
         dynamicAnimator.addBehavior(collisionBehavior)
         
-        //=======================
+        //=================================
         // Create spikes and spawn chance
-        //=======================
+        //=================================
         
         // Seven spike limit on screen
         for _ in 0...9 {
@@ -183,6 +183,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     func increment() {
         score += 1
         scoreCounterLabel.text = String(score)
+        
     }
     
     //================================
@@ -226,4 +227,25 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
             }
         }
     }
+    
+    //====================
+    // Collision Behavior
+    //====================
+
+    
+//    func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
+//        if item.isEqual(ball) && p.y > spike.center.y
+//        {
+//            score == 0
+//            if score > 0 {
+//                                ball.center = view.center
+//                dynamicAnimator.updateItemUsingCurrentState(ball)
+//            } else {
+//                livesLabel.text = "Game Over!"
+//                ball.removeFromSuperview()
+//                resetButton.hidden = false
+//            }
+//        }
+//    }
+
 }
