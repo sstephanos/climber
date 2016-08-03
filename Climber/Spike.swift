@@ -9,6 +9,8 @@
 import UIKit
 
 class Spike: UIView {
+    
+    var spawned = false
 
     override func drawRect(rect: CGRect) {
         let layerHeight = self.layer.frame.height
@@ -21,7 +23,7 @@ class Spike: UIView {
         bezierPath.addLineToPoint(CGPointMake(0, layerHeight / 2))
         bezierPath.closePath()
         
-        UIColor.grayColor().setFill()
+        UIColor.blackColor().setFill()
         bezierPath.fill()
         
         let shapeLayer = CAShapeLayer()

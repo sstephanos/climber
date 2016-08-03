@@ -84,11 +84,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-7f-G3b">
                                 <rect key="frame" x="172" y="20" width="91" height="77"/>
                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.072577111423015594" green="0.064559228718280792" blue="0.85793113708496094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0023896857164800167" green="0.85762852430343628" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3nj-7f-G3b" firstAttribute="centerX" secondItem="7OE-dv-xn1" secondAttribute="centerX" placeholder="YES" id="r5u-Xv-Uti"/>
                         </constraints>
@@ -173,9 +173,9 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6C-bO-4i9">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6C-bO-4i9">
                                 <rect key="frame" x="87" y="93" width="240" height="643"/>
-                                <string key="text">Welcome to Climber and thank you for playing! Climber is simple and made so just about everyone is able to play and enjoy it too! When you arrive in the game, we suggest you hit the play button because you're here for a reason and that's to play, so we think it's best that you do that first. Once in the game, the climber (actually just a dot) will move up the screen while encounter dangerous objects and obstacles along the way. When you encounter these objects, swipe to jump to avoid or evade them. Beware, the game gets increasingly faster! Your score will climb as time passes and will be displayed once you eventually succomb to the perils of climbing. Have fun and keep climbing!! </string>
+                                <string key="text">Welcome to Climber and thank you for playing! Climber is simple and made so just about everyone is able to play and enjoy it too! When you arrive in the game, we suggest you hit the play button because you're here for a reason and that's to play, so we think it's best that you do that first. Once in the game, the climber will begin move up the walls on either side of the screen, along the way there will be trecherous objects to avoud. When you encounter these objects, swipe to jump to avoid. Beware, the game gets harder at any moment! Your score will climb as time passes and don't forget to have fun and keep climbing!! </string>
                                 <color key="textColor" red="0.1821381151676178" green="0.089553661644458771" blue="0.62237459421157837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
