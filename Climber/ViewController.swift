@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var ball = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+       
+        
     }
-    
 }
+
+
 
