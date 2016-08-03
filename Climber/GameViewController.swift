@@ -72,12 +72,12 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         //================
         
         wall1 = UIView(frame: CGRectMake(0, 0, view.frame.width / 4, view.frame.height))
-        wall1.backgroundColor = UIColor.grayColor()
+        wall1.backgroundColor = UIColor.darkGrayColor()
         view.addSubview(wall1)
         
         
         wall2 = UIView(frame: CGRectMake(view.frame.width * 0.75 , 0, view.frame.width / 4, view.frame.height))
-        wall2.backgroundColor = UIColor.grayColor()
+        wall2.backgroundColor = UIColor.darkGrayColor()
         view.addSubview(wall2)
         
         
@@ -103,18 +103,18 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         //===========
         
         ball = UIView(frame: CGRectMake(view.center.x - view.frame.width / 4.07, view.frame.width + 150, 26, 26))
-        ball.backgroundColor = UIColor.blackColor()
+        ball.backgroundColor = UIColor.whiteColor()
         ball.layer.cornerRadius = 13
         ball.clipsToBounds = true
         view.addSubview(ball)
         
         //Ball Dynamic Behavior
-        let ballDynamicBehavior = UIDynamicItemBehavior(items: [ball])
-        ballDynamicBehavior.friction = 0
-        ballDynamicBehavior.resistance = 0
-        ballDynamicBehavior.elasticity = 0
-        ballDynamicBehavior.allowsRotation = false
-        dynamicAnimator.addBehavior(ballDynamicBehavior)
+//        let ballDynamicBehavior = UIDynamicItemBehavior(items: [ball])
+//        ballDynamicBehavior.friction = 0
+//        ballDynamicBehavior.resistance = 0
+//        ballDynamicBehavior.elasticity = 0
+//        ballDynamicBehavior.allowsRotation = false
+//        dynamicAnimator.addBehavior(ballDynamicBehavior)
         
         //================
         // Swipe Variables
@@ -145,7 +145,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Left) {
             if (!canSwipeLeft) { return }
             print("Swipe Left")
-            let ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y);
+            var ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y);
             
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
@@ -160,7 +160,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Right) {
             if (!canSwipeRight) { return }
             print("Swipe Right")
-            let ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y);
+            var ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y);
             
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)

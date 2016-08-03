@@ -23,7 +23,7 @@ class Spike: UIView {
         bezierPath.addLineToPoint(CGPointMake(layerWidth / 2, layerHeight))
         bezierPath.closePath()
         
-        UIColor.grayColor().setFill()
+        UIColor.blackColor().setFill()
         bezierPath.fill()
         
         let shapeLayer = CAShapeLayer()
