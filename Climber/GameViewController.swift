@@ -64,7 +64,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
             spikeDynamicBehavior.addItem(spike)
             collisionBehavior.addItem(spike)
         }
-        // Spike chance for spawn, multiplied w/number of spikes because every spike is checked with the same chance
+        // Spike chance for spawn, multiplied w/number of spikes that are available for spawn because every spike is checked with the same chance
         spikeSpawnChance = 5
         
         //================
