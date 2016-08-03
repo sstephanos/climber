@@ -16,11 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        ball = UIView(frame: CGRectMake(view.center.x, view.center.y, 25, 25))
-        ball.backgroundColor = UIColor.whiteColor()
-        ball.layer.cornerRadius = 13
-        ball.clipsToBounds = true
-        view.addSubview(ball)
+       
         
     }
 }

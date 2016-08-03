@@ -21,17 +21,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MT" translatesAutoresizingMaskIntoConstraints="NO" id="8ir-Vk-voo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQr-R5-H4R">
-                                <rect key="frame" x="144" y="359" width="126" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="126" id="BMx-Xg-V0G"/>
-                                    <constraint firstAttribute="height" constant="57" id="CKw-mU-aSC"/>
-                                </constraints>
-                                <state key="normal" image="PlayButton"/>
-                                <connections>
-                                    <segue destination="6cy-j9-gy2" kind="show" id="fqS-s3-MkJ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4q-qH-szn">
                                 <rect key="frame" x="20" y="688" width="40" height="40"/>
                                 <constraints>
@@ -43,16 +32,27 @@
                                     <segue destination="dv8-El-TPX" kind="show" id="iYX-5n-bj7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WhiteDot" translatesAutoresizingMaskIntoConstraints="NO" id="Mm6-wn-O68">
-                                <rect key="frame" x="160" y="270" width="22" height="22"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Climber" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q84-Tn-U8a">
-                                <rect key="frame" x="6" y="242" width="408" height="136"/>
+                                <rect key="frame" x="3" y="227" width="408" height="136"/>
                                 <fontDescription key="fontDescription" name="Menlo-BoldItalic" family="Menlo" pointSize="72"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.023788480088114738" green="0.011427443474531174" blue="0.027950730174779892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WhiteDot" translatesAutoresizingMaskIntoConstraints="NO" id="Mm6-wn-O68">
+                                <rect key="frame" x="157" y="256" width="22" height="22"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQr-R5-H4R">
+                                <rect key="frame" x="144" y="357" width="126" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="BMx-Xg-V0G"/>
+                                    <constraint firstAttribute="height" constant="57" id="CKw-mU-aSC"/>
+                                </constraints>
+                                <state key="normal" image="PlayButton"/>
+                                <connections>
+                                    <segue destination="6cy-j9-gy2" kind="show" id="fqS-s3-MkJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
