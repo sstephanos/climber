@@ -113,12 +113,12 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         view.addSubview(ball)
         
         //Ball Dynamic Behavior
-        let ballDynamicBehavior = UIDynamicItemBehavior(items: [ball])
-        ballDynamicBehavior.friction = 0
-        ballDynamicBehavior.resistance = 0
-        ballDynamicBehavior.elasticity = 0
-        ballDynamicBehavior.allowsRotation = false
-        dynamicAnimator.addBehavior(ballDynamicBehavior)
+//        let ballDynamicBehavior = UIDynamicItemBehavior(items: [ball])
+//        ballDynamicBehavior.friction = 0
+//        ballDynamicBehavior.resistance = 0
+//        ballDynamicBehavior.elasticity = 0
+//        ballDynamicBehavior.allowsRotation = false
+//        dynamicAnimator.addBehavior(ballDynamicBehavior)
         
         //================
         // Swipe Variables
@@ -149,7 +149,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Left) {
             if (!canSwipeLeft) { return }
             print("Swipe Left")
-            let ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y);
+            var ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y);
             
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
@@ -164,7 +164,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Right) {
             if (!canSwipeRight) { return }
             print("Swipe Right")
-            let ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y);
+            var ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y);
             
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
