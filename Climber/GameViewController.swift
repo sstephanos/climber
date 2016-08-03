@@ -30,13 +30,9 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //=======================
-        // Spike and Arrow Logic
-        //=======================
-        
         let spikeDynamicBehavior = UIDynamicItemBehavior(items: [])
-        spikeDynamicBehavior.anchored = true
-        spikeDynamicBehavior.allowsRotation = false
+        spikeDynamicBehavior.anchored = false
+        spikeDynamicBehavior.allowsRotation = true
         dynamicAnimator.addBehavior(spikeDynamicBehavior)
         
         let arrowShooterDynamicBehavior = UIDynamicItemBehavior(items: [])
@@ -61,7 +57,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         
         // Seven spike limit on screen
         for _ in 0...9 {
-            spikes.append(Spike(frame: CGRectMake(view.center.x, view.center.y * 1.7, 40, 20)))
+            spikes.append(Spike(frame: CGRectMake(view.center.x, view.center.y, 80, 20)))
         }
         
         for spike in spikes {
@@ -196,13 +192,15 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                 let spawnChanceRange = Int(arc4random_uniform(100))
                 if spawnChanceRange < spikeSpawnChance {
                     spike.spawned = true
-                    spike.center = CGPoint(x: 3 * view.frame.width / 4 - spike.frame.width / 2, y: 0)
+                    spike.center = CGPoint(x: 3 * view.frame.width / 4, y: 0)
                     view.addSubview(spike)
+                    view.sendSubviewToBack(spike)
                     UIView.animateWithDuration(2.0, animations: {
                         spike.center.y = self.view.frame.height + spike.frame.height / 2
                         self.dynamicAnimator.updateItemUsingCurrentState(spike)
                         }, completion: { (completed) in
                             spike.spawned = false
+                            spike.removeFromSuperview()
                     })
                     break
                 }
@@ -214,14 +212,15 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         for spike in spikes {
             if spike.spawned == false {
                 spike.spawned = true
-                spike.center = CGPoint(x: view.frame.width / 4 + spike.frame.width / 2, y: 0)
-                //spike.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+                spike.center = CGPoint(x: view.frame.width / 4, y: 0)
                 view.addSubview(spike)
+                view.sendSubviewToBack(spike)
                 UIView.animateWithDuration(2.0, animations: {
                     spike.center.y = self.view.frame.height + spike.frame.height / 2
                     self.dynamicAnimator.updateItemUsingCurrentState(spike)
                     }, completion: { (completed) in
                         spike.spawned = false
+                        spike.removeFromSuperview()
                 })
                 break
             }
