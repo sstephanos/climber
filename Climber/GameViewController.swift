@@ -121,9 +121,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         _ = NSTimer.scheduledTimerWithTimeInterval(0.35, target: self, selector: #selector(GameViewController.spikeRightWallRandomSpawn), userInfo: nil, repeats: true)
         //Spawns spikes on left wall
         _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.spikeLeftWallTimedSpawn), userInfo: nil, repeats: true)
-        //Checks for intersects
-        _ = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(GameViewController.intersectChecker), userInfo: nil, repeats: true)
-    
+        
         //================
         // Swipe Variables
         //================
@@ -184,79 +182,87 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     // Spike spawning functions
     //=========================
     
-    func spikeRightWallRandomSpawn() {
+    func spikeAnimatorHelper(rightSide: Bool) {
         for spike in spikes {
             if spike.spawned == false {
                 let spawnChanceRange = Int(arc4random_uniform(100))
-                if spawnChanceRange < spikeSpawnChance {
+                if (rightSide && spawnChanceRange < spikeSpawnChance) || !(rightSide) {
                     spike.spawned = true
-                    spike.center = CGPoint(x: 3 * view.frame.width / 4, y: 0)
+                    spike.center = rightSide ? CGPoint(x: 3 * view.frame.width / 4, y: 0) : CGPoint(x: view.frame.width / 4, y: 0)
                     view.addSubview(spike)
                     view.sendSubviewToBack(spike)
-                    UIView.animateWithDuration(1.6, delay: 0.0, options: .AllowAnimatedContent, animations: { 
-                        spike.center.y = self.ball.center.y
-                        self.dynamicAnimator.updateItemUsingCurrentState(spike)
-                        }, completion: { (completed) in
-                            if (abs(self.ball.center.x - spike.center.x) <= 10) && (abs(self.ball.center.y - spike.center.y) <= 10) {
-                                print("finally")
-                            }
-                            UIView.animateWithDuration(0.4, delay: 0.0, options: .CurveEaseOut, animations: {
-                                spike.center.y = self.view.frame.height + spike.frame.height / 2
-                                self.dynamicAnimator.updateItemUsingCurrentState(spike)
-                                }, completion: { (completed) in
-                                    spike.spawned = false
-                                    spike.removeFromSuperview()
-                            })
-                    })
+
+                    //animating
+                    
+                    //spike.spawned = false
+                    //spike.removeFromSuperview()
                     break
                 }
             }
         }
     }
     
+    func spikeRightWallRandomSpawn() {
+//        for spike in spikes {
+//            if spike.spawned == false {
+//                let spawnChanceRange = Int(arc4random_uniform(100))
+//                if spawnChanceRange < spikeSpawnChance {
+//                    spike.spawned = true
+//                    spike.center = CGPoint(x: 3 * view.frame.width / 4, y: 0)
+//                    view.addSubview(spike)
+//                    view.sendSubviewToBack(spike)
+//                    UIView.animateWithDuration(2.0, delay: 0.0, options: .AllowAnimatedContent, animations: {
+//                        spike.center.y = self.view.frame.height + spike.frame.height / 2
+//                        self.dynamicAnimator.updateItemUsingCurrentState(spike)
+//                        }, completion: { (completed) in
+//                            spike.spawned = false
+//                            spike.removeFromSuperview()
+//                    })
+//                    break
+//                }
+//            }
+//        }
+        spikeAnimatorHelper(true)
+    }
+    
     func spikeLeftWallTimedSpawn() {
-        for spike in spikes {
-            if spike.spawned == false {
-                spike.spawned = true
-                spike.center = CGPoint(x: view.frame.width / 4, y: 0)
-                view.addSubview(spike)
-                view.sendSubviewToBack(spike)
-                UIView.animateWithDuration(1.6, delay: 0.0, options: .AllowAnimatedContent, animations: {
-                    spike.center.y = self.ball.center.y
-                    self.dynamicAnimator.updateItemUsingCurrentState(spike)
-                    }, completion: { (completed) in
-                        if (abs(self.ball.center.x - spike.center.x) <= 10) && (abs(self.ball.center.y - spike.center.y) <= 10) {
-                            print("finally")
-                        }
-                        UIView.animateWithDuration(0.4, delay: 0.0, options: .CurveEaseOut, animations: {
-                            spike.center.y = self.view.frame.height + spike.frame.height / 2
-                            self.dynamicAnimator.updateItemUsingCurrentState(spike)
-                            }, completion: { (completed) in
-                                spike.spawned = false
-                                spike.removeFromSuperview()
-                        })
-                })
-                break
-            }
-        }
+//        for spike in spikes {
+//            if spike.spawned == false {
+//                spike.spawned = true
+//                spike.center = CGPoint(x: view.frame.width / 4, y: 0)
+//                view.addSubview(spike)
+//                view.sendSubviewToBack(spike)
+//                UIView.animateWithDuration(1.6, delay: 0.0, options: .AllowAnimatedContent, animations: {
+//                    spike.center.y = self.ball.center.y
+//                    self.dynamicAnimator.updateItemUsingCurrentState(spike)
+//                    }, completion: nil)
+//                UIView.animateWithDuration(0.4, delay: 0.0, options: .CurveEaseOut, animations: {
+//                    spike.center.y = self.view.frame.height + spike.frame.height / 2
+//                    self.dynamicAnimator.updateItemUsingCurrentState(spike)
+//                    }, completion: { (completed) in
+//                        spike.spawned = false
+//                        spike.removeFromSuperview()
+//                })
+//                break
+//            }
+//        }
+        spikeAnimatorHelper(false)
+        
     }
     
     //============================
     // Collision Behavior Function
     //============================
-    func intersectChecker() {
-        for spike in spikes {
-            //
-
-        }
-    }
 
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem, atPoint p: CGPoint) {
-        if item1.isEqual(ball) || item2.isEqual(ball) {
-            print("ball")
-        }
         if (item1.isEqual(ball) && item2 is Spike) || (item2.isEqual(ball) && item1 is Spike) {
-            print("bam")
+            performSegueWithIdentifier("EndGame", sender: nil)
         }
     }
+        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! EndGameViewController
+        dvc.score = "\(score)"
+    }
+        
 }
