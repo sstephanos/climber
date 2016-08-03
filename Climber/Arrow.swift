@@ -9,6 +9,8 @@
 import UIKit
 
 class Arrow: UIView {
+    
+    var collided = false
 
     override func drawRect(rect: CGRect) {
         let layerHeight = self.layer.frame.height
