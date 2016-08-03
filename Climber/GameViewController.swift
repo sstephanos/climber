@@ -225,4 +225,10 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
             }
         }
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! EndGameViewController
+        dvc.score = "\(score)"
+    }
 }

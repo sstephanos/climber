@@ -152,6 +152,9 @@
                             <constraint firstItem="cz8-Gh-2fW" firstAttribute="centerY" secondItem="bTE-o7-lHn" secondAttribute="centerY" id="kxt-Hd-lcw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="endScoreLabel" destination="cJC-Xx-vBX" id="3P4-IK-WMf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLs-fx-xte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,6 +221,6 @@
         <image name="WhiteDot" width="2000" height="2000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Ys-Dy-74v"/>
+        <segue reference="A8Z-uS-Ngz"/>
     </inferredMetricsTieBreakers>
 </document>
