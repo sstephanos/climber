@@ -18,9 +18,9 @@ class Spike: UIView {
         
         let bezierPath = UIBezierPath()
         bezierPath.moveToPoint(CGPointMake(0, layerHeight / 2))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth, 0))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth, layerHeight))
-        bezierPath.addLineToPoint(CGPointMake(0, layerHeight / 2))
+        bezierPath.addLineToPoint(CGPointMake(layerWidth / 2, 0))
+        bezierPath.addLineToPoint(CGPoint(x: layerWidth, y: layerHeight / 2))
+        bezierPath.addLineToPoint(CGPointMake(layerWidth / 2, layerHeight))
         bezierPath.closePath()
         
         UIColor.grayColor().setFill()
