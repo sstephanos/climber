@@ -129,12 +129,12 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         view.addSubview(ball)
         
         //Ball Dynamic Behavior
-        let ballDynamicBehavior = UIDynamicItemBehavior(items: [ball])
-        ballDynamicBehavior.friction = 0
-        ballDynamicBehavior.resistance = 0
-        ballDynamicBehavior.elasticity = 0
-        ballDynamicBehavior.allowsRotation = false
-        dynamicAnimator.addBehavior(ballDynamicBehavior)
+//        let ballDynamicBehavior = UIDynamicItemBehavior(items: [ball])
+//        ballDynamicBehavior.friction = 0
+//        ballDynamicBehavior.resistance = 0
+//        ballDynamicBehavior.elasticity = 0
+//        ballDynamicBehavior.allowsRotation = false
+//        dynamicAnimator.addBehavior(ballDynamicBehavior)
         
         //================
         // Swipe Variables
