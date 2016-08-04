@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -32,17 +32,6 @@
                                     <segue destination="6cy-j9-gy2" kind="show" id="fqS-s3-MkJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4q-qH-szn">
-                                <rect key="frame" x="20" y="688" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="7Hu-v9-HSm"/>
-                                    <constraint firstAttribute="height" constant="40" id="C60-Ly-4zv"/>
-                                </constraints>
-                                <state key="normal" image="InfoButton"/>
-                                <connections>
-                                    <segue destination="dv8-El-TPX" kind="show" id="iYX-5n-bj7"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Climber" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q84-Tn-U8a">
                                 <rect key="frame" x="3" y="228" width="408" height="136"/>
                                 <fontDescription key="fontDescription" name="Menlo-BoldItalic" family="Menlo" pointSize="72"/>
@@ -57,6 +46,17 @@
                                     <constraint firstAttribute="height" constant="22" id="I0l-be-wdx"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4q-qH-szn">
+                                <rect key="frame" x="8" y="671" width="57" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7Hu-v9-HSm"/>
+                                    <constraint firstAttribute="height" constant="40" id="C60-Ly-4zv"/>
+                                </constraints>
+                                <state key="normal" image="i button.png"/>
+                                <connections>
+                                    <segue destination="dv8-El-TPX" kind="show" id="iYX-5n-bj7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -83,19 +83,21 @@
                         <viewControllerLayoutGuide type="bottom" id="dE6-pL-Dbl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7OE-dv-xn1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-7f-G3b">
-                                <rect key="frame" x="172" y="20" width="91" height="77"/>
-                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-7f-G3b">
+                                <rect key="frame" x="20" y="20" width="560" height="73"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="60"/>
                                 <color key="textColor" red="0.96785013090000005" green="0.96785013090000005" blue="0.96785013090000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0023896857164800167" green="0.85762852430343628" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3nj-7f-G3b" firstAttribute="centerX" secondItem="7OE-dv-xn1" secondAttribute="centerX" placeholder="YES" id="r5u-Xv-Uti"/>
+                            <constraint firstItem="3nj-7f-G3b" firstAttribute="top" secondItem="Rar-8C-BJU" secondAttribute="bottom" id="OsC-4J-5hY"/>
+                            <constraint firstItem="3nj-7f-G3b" firstAttribute="leading" secondItem="7OE-dv-xn1" secondAttribute="leadingMargin" id="wCF-j5-jBL"/>
+                            <constraint firstItem="3nj-7f-G3b" firstAttribute="trailing" secondItem="7OE-dv-xn1" secondAttribute="trailingMargin" id="zPh-UL-BAi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -106,7 +108,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nz-mo-qtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="ARu-5P-ztK"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="342"/>
+            <point key="canvasLocation" x="1346" y="350"/>
         </scene>
         <!--End Game View Controller-->
         <scene sceneID="efg-CQ-pEt">
@@ -117,38 +119,43 @@
                         <viewControllerLayoutGuide type="bottom" id="AvP-G6-wn6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bTE-o7-lHn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="InstructionsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8Mv-vJ-5PB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MT" translatesAutoresizingMaskIntoConstraints="NO" id="uTt-v0-pCo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SCORE:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqS-lU-FMo">
-                                <rect key="frame" x="161" y="28" width="279" height="202"/>
-                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="72"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJC-Xx-vBX">
-                                <rect key="frame" x="161" y="149" width="279" height="107"/>
-                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="84"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJC-Xx-vBX">
+                                <rect key="frame" x="20" y="216" width="560" height="107"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="84"/>
+                                <color key="textColor" red="0.48173923359999998" green="0.77818130959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz8-Gh-2fW">
-                                <rect key="frame" x="233" y="273" width="135" height="54"/>
-                                <state key="normal" title="Restart" image="RestartButton"/>
+                                <rect key="frame" x="268" y="347" width="64" height="64"/>
+                                <state key="normal" title="Restart" image="refresh.png"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="A8Z-uS-Ngz"/>
+                                    <segue destination="6cy-j9-gy2" kind="show" id="LtI-MZ-vWe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7K-6s-jzw">
+                                <rect key="frame" x="107" y="104" width="408" height="136"/>
+                                <fontDescription key="fontDescription" name="Menlo-BoldItalic" family="Menlo" pointSize="72"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.023788480090000001" green="0.01142744347" blue="0.02795073017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uTt-v0-pCo" firstAttribute="leading" secondItem="bTE-o7-lHn" secondAttribute="leadingMargin" constant="-20" id="0WV-v2-i5R"/>
+                            <constraint firstItem="Z7K-6s-jzw" firstAttribute="centerX" secondItem="bTE-o7-lHn" secondAttribute="centerX" id="1Rj-lC-nrd"/>
                             <constraint firstItem="cz8-Gh-2fW" firstAttribute="centerX" secondItem="bTE-o7-lHn" secondAttribute="centerX" id="6hv-Ei-WzD"/>
-                            <constraint firstItem="8Mv-vJ-5PB" firstAttribute="centerX" secondItem="bTE-o7-lHn" secondAttribute="centerX" id="h7q-jL-KmZ"/>
+                            <constraint firstItem="AvP-G6-wn6" firstAttribute="top" secondItem="uTt-v0-pCo" secondAttribute="bottom" id="7nY-H2-C7m"/>
+                            <constraint firstItem="cJC-Xx-vBX" firstAttribute="centerX" secondItem="bTE-o7-lHn" secondAttribute="centerX" id="J2B-T8-L8t"/>
+                            <constraint firstItem="uTt-v0-pCo" firstAttribute="top" secondItem="bTE-o7-lHn" secondAttribute="topMargin" id="NyT-d3-cnb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uTt-v0-pCo" secondAttribute="trailing" constant="-20" id="Q3c-Qf-xHc"/>
                             <constraint firstItem="cz8-Gh-2fW" firstAttribute="centerY" secondItem="bTE-o7-lHn" secondAttribute="centerY" id="kxt-Hd-lcw"/>
                         </constraints>
                     </view>
@@ -158,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLs-fx-xte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792" y="350"/>
+            <point key="canvasLocation" x="2042" y="350"/>
         </scene>
         <!--Instructions View Controller-->
         <scene sceneID="x1P-Nr-zDS">
@@ -172,55 +179,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="IBackground2" translatesAutoresizingMaskIntoConstraints="NO" id="Yig-rN-fwR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4ABDkCz.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Yig-rN-fwR">
+                                <rect key="frame" x="-393" y="0.0" width="1176" height="1116"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM9-Df-6Bh">
-                                <rect key="frame" x="67" y="36" width="280" height="49"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="48"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.016216129064559937" green="0.92207628488540649" blue="0.98686808347702026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6C-bO-4i9">
-                                <rect key="frame" x="87" y="93" width="240" height="643"/>
-                                <string key="text">Welcome to Climber and thank you for playing! Climber is simple and made so just about everyone is able to play and enjoy it too! When you arrive in the game, we suggest you hit the play button because you're here for a reason and that's to play, so we think it's best that you do that first. Once in the game, the climber will begin move up the walls on either side of the screen, along the way there will be trecherous objects to avoud. When you encounter these objects, swipe to jump to avoid. Beware, the game gets harder at any moment! Your score will climb as time passes and don't forget to have fun and keep climbing!! </string>
-                                <color key="textColor" red="0.1821381151676178" green="0.089553661644458771" blue="0.62237459421157837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efn-ST-uBL">
                                 <rect key="frame" x="20" y="20" width="34" height="30"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.20073041319847107" green="0.013969108462333679" blue="0.97347825765609741" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="3Ys-Dy-74v"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6C-bO-4i9">
+                                <rect key="frame" x="87" y="147" width="240" height="643"/>
+                                <string key="text">As a Climber, your job is to get as high up the mountain as you possibly can. Watch out for sharp edges however! Coming into contact with any sharp surfaces will immediately end the game. Swipe left or right on the screen to avoid the spiky edges and scale even higher! No matter what, keep climbing!  </string>
+                                <color key="textColor" red="0.96785013090000005" green="0.96785013090000005" blue="0.96785013090000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM9-Df-6Bh">
+                                <rect key="frame" x="67" y="80" width="280" height="49"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.016216129064559937" green="0.92207628488540649" blue="0.98686808347702026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EM9-Df-6Bh" firstAttribute="centerX" secondItem="04U-OH-bxv" secondAttribute="centerX" id="6Ig-hR-yiW"/>
-                            <constraint firstItem="Yig-rN-fwR" firstAttribute="centerX" secondItem="04U-OH-bxv" secondAttribute="centerX" id="q6k-ul-iEk"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="o6C-bO-4i9" secondAttribute="bottom" constant="-54" id="6Lc-Fd-deU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o6C-bO-4i9" secondAttribute="trailing" constant="67" id="Iy8-wc-loM"/>
+                            <constraint firstItem="o6C-bO-4i9" firstAttribute="leading" secondItem="04U-OH-bxv" secondAttribute="leadingMargin" constant="67" id="KeX-N3-cFq"/>
+                            <constraint firstItem="o6C-bO-4i9" firstAttribute="top" secondItem="EM9-Df-6Bh" secondAttribute="bottom" constant="18" id="yFE-xa-VLC"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tW-kw-C86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="1317"/>
+            <point key="canvasLocation" x="279" y="1311"/>
         </scene>
     </scenes>
     <resources>
-        <image name="IBackground2" width="564" height="846"/>
-        <image name="InfoButton" width="128" height="128"/>
-        <image name="InstructionsBackground" width="236" height="418"/>
+        <image name="4ABDkCz.jpg" width="1920" height="1080"/>
         <image name="MT" width="450" height="281"/>
         <image name="PlayButton" width="350" height="150"/>
-        <image name="RestartButton" width="600" height="192"/>
         <image name="WhiteDot" width="2000" height="2000"/>
+        <image name="i button.png" width="512" height="512"/>
+        <image name="refresh.png" width="305" height="307"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="A8Z-uS-Ngz"/>
+        <segue reference="LtI-MZ-vWe"/>
     </inferredMetricsTieBreakers>
 </document>

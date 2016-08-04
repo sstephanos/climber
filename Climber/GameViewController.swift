@@ -51,9 +51,9 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior.collisionDelegate = self
         dynamicAnimator.addBehavior(collisionBehavior)
         
-        //=======================
+        //===============================
         // Create spikes and spawn chance
-        //=======================
+        //===============================
         
         // Seven spike limit on screen
         for _ in 0...9 {
@@ -167,6 +167,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                 
                 self.canSwipeLeft = true
                 self.canSwipeRight = false
+                
                 
             })
             
