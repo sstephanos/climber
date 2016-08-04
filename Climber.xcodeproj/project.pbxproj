@@ -429,7 +429,7 @@
 				INFOPLIST_FILE = Climber/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Daniel.Climber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Simon.Climber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -444,7 +444,7 @@
 				INFOPLIST_FILE = Climber/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Daniel.Climber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Simon.Climber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
