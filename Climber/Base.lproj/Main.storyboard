@@ -134,7 +134,11 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz8-Gh-2fW">
                                 <rect key="frame" x="268" y="347" width="64" height="64"/>
-                                <state key="normal" title="Restart" image="refresh.png"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Sl8-4l-XqB"/>
+                                    <constraint firstAttribute="width" constant="64" id="VrX-CT-hO6"/>
+                                </constraints>
+                                <state key="normal" image="refresh.png"/>
                                 <connections>
                                     <segue destination="6cy-j9-gy2" kind="show" id="LtI-MZ-vWe"/>
                                 </connections>
