@@ -13,11 +13,6 @@
 		5B0B724A1D4C538000903ABB /* Spike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B72491D4C538000903ABB /* Spike.swift */; };
 		5B0B724C1D4C597C00903ABB /* ArrowShooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B724B1D4C597C00903ABB /* ArrowShooter.swift */; };
 		5B12BB431D4E7C730031F0F8 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B12BB421D4E7C730031F0F8 /* Arrow.swift */; };
-		D021E3DE1D52A7C600ECE7DB /* MountainBackground.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D021E3DD1D52A7C600ECE7DB /* MountainBackground.jpeg */; };
-		D021E3E01D52A9D700ECE7DB /* i button.png in Resources */ = {isa = PBXBuildFile; fileRef = D021E3DF1D52A9D700ECE7DB /* i button.png */; };
-		D021E3E21D52AE9A00ECE7DB /* dragonshy_mountain_background_by_theonewiththeoctaves-d5rn9hd.png in Resources */ = {isa = PBXBuildFile; fileRef = D021E3E11D52AE9A00ECE7DB /* dragonshy_mountain_background_by_theonewiththeoctaves-d5rn9hd.png */; };
-		D021E3E41D52B06400ECE7DB /* 4ABDkCz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D021E3E31D52B06400ECE7DB /* 4ABDkCz.jpg */; };
-		D021E3E61D52B98900ECE7DB /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = D021E3E51D52B98900ECE7DB /* refresh.png */; };
 		D0B5C67C1D4BD0F10074EFBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5C67B1D4BD0F10074EFBE /* AppDelegate.swift */; };
 		D0B5C67E1D4BD0F10074EFBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5C67D1D4BD0F10074EFBE /* ViewController.swift */; };
 		D0B5C6811D4BD0F10074EFBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B5C67F1D4BD0F10074EFBE /* Main.storyboard */; };
@@ -51,11 +46,6 @@
 		5B0B72491D4C538000903ABB /* Spike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spike.swift; sourceTree = "<group>"; };
 		5B0B724B1D4C597C00903ABB /* ArrowShooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowShooter.swift; sourceTree = "<group>"; };
 		5B12BB421D4E7C730031F0F8 /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
-		D021E3DD1D52A7C600ECE7DB /* MountainBackground.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = MountainBackground.jpeg; path = ../../../Downloads/MountainBackground.jpeg; sourceTree = "<group>"; };
-		D021E3DF1D52A9D700ECE7DB /* i button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "i button.png"; path = "../../../Downloads/i button.png"; sourceTree = "<group>"; };
-		D021E3E11D52AE9A00ECE7DB /* dragonshy_mountain_background_by_theonewiththeoctaves-d5rn9hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dragonshy_mountain_background_by_theonewiththeoctaves-d5rn9hd.png"; path = "../../../Downloads/dragonshy_mountain_background_by_theonewiththeoctaves-d5rn9hd.png"; sourceTree = "<group>"; };
-		D021E3E31D52B06400ECE7DB /* 4ABDkCz.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4ABDkCz.jpg; path = ../../../Downloads/4ABDkCz.jpg; sourceTree = "<group>"; };
-		D021E3E51D52B98900ECE7DB /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = ../../../Downloads/refresh.png; sourceTree = "<group>"; };
 		D0B5C6781D4BD0F10074EFBE /* Climber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B5C67B1D4BD0F10074EFBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0B5C67D1D4BD0F10074EFBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,12 +118,7 @@
 				5B0B724B1D4C597C00903ABB /* ArrowShooter.swift */,
 				5B12BB421D4E7C730031F0F8 /* Arrow.swift */,
 				D0B5C67F1D4BD0F10074EFBE /* Main.storyboard */,
-				D021E3E51D52B98900ECE7DB /* refresh.png */,
-				D021E3DF1D52A9D700ECE7DB /* i button.png */,
 				D0B5C6821D4BD0F20074EFBE /* Assets.xcassets */,
-				D021E3E31D52B06400ECE7DB /* 4ABDkCz.jpg */,
-				D021E3E11D52AE9A00ECE7DB /* dragonshy_mountain_background_by_theonewiththeoctaves-d5rn9hd.png */,
-				D021E3DD1D52A7C600ECE7DB /* MountainBackground.jpeg */,
 				D0B5C6841D4BD0F20074EFBE /* LaunchScreen.storyboard */,
 				D0B5C6871D4BD0F20074EFBE /* Info.plist */,
 			);
@@ -264,11 +249,6 @@
 			files = (
 				D0B5C6861D4BD0F20074EFBE /* LaunchScreen.storyboard in Resources */,
 				D0B5C6831D4BD0F20074EFBE /* Assets.xcassets in Resources */,
-				D021E3DE1D52A7C600ECE7DB /* MountainBackground.jpeg in Resources */,
-				D021E3E21D52AE9A00ECE7DB /* dragonshy_mountain_background_by_theonewiththeoctaves-d5rn9hd.png in Resources */,
-				D021E3E01D52A9D700ECE7DB /* i button.png in Resources */,
-				D021E3E61D52B98900ECE7DB /* refresh.png in Resources */,
-				D021E3E41D52B06400ECE7DB /* 4ABDkCz.jpg in Resources */,
 				D0B5C6811D4BD0F10074EFBE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,10 +423,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Climber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Simon.Climber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -454,10 +438,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Climber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Simon.Climber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

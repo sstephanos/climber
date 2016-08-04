@@ -132,7 +132,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz8-Gh-2fW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz8-Gh-2fW">
                                 <rect key="frame" x="268" y="347" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Sl8-4l-XqB"/>
@@ -160,7 +160,8 @@
                             <constraint firstItem="cJC-Xx-vBX" firstAttribute="centerX" secondItem="bTE-o7-lHn" secondAttribute="centerX" id="J2B-T8-L8t"/>
                             <constraint firstItem="uTt-v0-pCo" firstAttribute="top" secondItem="bTE-o7-lHn" secondAttribute="topMargin" id="NyT-d3-cnb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uTt-v0-pCo" secondAttribute="trailing" constant="-20" id="Q3c-Qf-xHc"/>
-                            <constraint firstItem="cz8-Gh-2fW" firstAttribute="centerY" secondItem="bTE-o7-lHn" secondAttribute="centerY" id="kxt-Hd-lcw"/>
+                            <constraint firstItem="cz8-Gh-2fW" firstAttribute="centerX" secondItem="bTE-o7-lHn" secondAttribute="centerX" id="T8E-x7-sgM"/>
+                            <constraint firstItem="cz8-Gh-2fW" firstAttribute="centerY" secondItem="bTE-o7-lHn" secondAttribute="centerY" constant="79" id="eUs-ZV-Kqy"/>
                         </constraints>
                     </view>
                     <connections>

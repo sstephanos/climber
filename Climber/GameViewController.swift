@@ -119,11 +119,11 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         //Spawns spikes on right wall
         _ = NSTimer.scheduledTimerWithTimeInterval(0.35, target: self, selector: #selector(GameViewController.spikeRightWallRandomSpawn), userInfo: nil, repeats: true)
         //Delay for right wall death checker
-        _ = NSTimer.scheduledTimerWithTimeInterval(1.22, target: self, selector: #selector(GameViewController.handleRightWallDeathTimer), userInfo: nil, repeats: false)
+        _ = NSTimer.scheduledTimerWithTimeInterval(1.27, target: self, selector: #selector(GameViewController.handleRightWallDeathTimer), userInfo: nil, repeats: false)
         //Spawns spikes on left wall
         _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.spikeLeftWallTimedSpawn), userInfo: nil, repeats: true)
         //Delay for left wall death checker
-        _ = NSTimer.scheduledTimerWithTimeInterval(1.22, target: self, selector: #selector(GameViewController.handleLeftWallDeathTimer), userInfo: nil, repeats: false)
+        _ = NSTimer.scheduledTimerWithTimeInterval(1.27, target: self, selector: #selector(GameViewController.handleLeftWallDeathTimer), userInfo: nil, repeats: false)
         
         
         //================
@@ -144,6 +144,14 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     // Actual Swipe Direction Function
     //================================
     
+    func canSwipeLeftMakeTrue() {
+        canSwipeLeft = true
+    }
+    
+    func canSwipeRightMakeTrue() {
+        canSwipeRight = true
+    }
+    
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Left) {
             if (!canSwipeLeft) { return }
@@ -153,9 +161,11 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                 self.ball.frame = CGRectMake(ballPosition.x, ballPosition.y, self.ball.frame.size.width, self.ball.frame.size.height)
                 self.dynamicAnimator.updateItemUsingCurrentState(self.ball)
                 self.canSwipeLeft = false
+                //self.canSwipeRight = true
                 }, completion: { (completion) in
-                    self.canSwipeRight = true
+                    //self.canSwipeRight = true
             })
+            _ = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(GameViewController.canSwipeRightMakeTrue), userInfo: nil, repeats: false)
         }
         if (sender.direction == .Right) {
             if (!canSwipeRight) { return }
@@ -165,9 +175,11 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                 self.ball.frame = CGRectMake(ballPosition.x, ballPosition.y, self.ball.frame.size.width, self.ball.frame.size.height)
                 self.dynamicAnimator.updateItemUsingCurrentState(self.ball)
                 self.canSwipeRight = false
+                //self.canSwipeLeft = true
                 }, completion: { (completion) in
-                    self.canSwipeLeft = true
+                    //self.canSwipeLeft = true
             })
+            _ = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(GameViewController.canSwipeLeftMakeTrue), userInfo: nil, repeats: false)
         }
     }
     
@@ -197,7 +209,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         spike.center = rightSide ? CGPoint(x: 3 * view.frame.width / 4, y: 0) : CGPoint(x: view.frame.width / 4, y: 0)
         view.addSubview(spike)
         view.sendSubviewToBack(spike)
-        _ = NSTimer.scheduledTimerWithTimeInterval(1.2, target: self, selector: #selector(GameViewController.yesSpikeOnRightWall), userInfo: nil, repeats: false)
+        _ = NSTimer.scheduledTimerWithTimeInterval(1.21, target: self, selector: #selector(GameViewController.yesSpikeOnRightWall), userInfo: nil, repeats: false)
         UIView.animateWithDuration(2.0, delay: 0.0, options: .AllowAnimatedContent, animations: {
             spike.center.y = self.view.frame.height + spike.frame.height / 2
             self.dynamicAnimator.updateItemUsingCurrentState(spike)
@@ -217,7 +229,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                         spikeAnimatorHelperAnimations(spike, rightSide: rightSide)
                         break
                     } else {
-                        _ = NSTimer.scheduledTimerWithTimeInterval(1.2, target: self, selector: #selector(GameViewController.noSpikeOnRightWall), userInfo: nil, repeats: false)
+                        _ = NSTimer.scheduledTimerWithTimeInterval(1.21, target: self, selector: #selector(GameViewController.noSpikeOnRightWall), userInfo: nil, repeats: false)
                     }
                 } else {
                     spikeAnimatorHelperAnimations(spike, rightSide: false)
