@@ -39,13 +39,6 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.023788480088114738" green="0.011427443474531174" blue="0.027950730174779892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="WhiteDot" translatesAutoresizingMaskIntoConstraints="NO" id="Mm6-wn-O68">
-                                <rect key="frame" x="157" y="256" width="22" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="2Rj-3T-1vY"/>
-                                    <constraint firstAttribute="height" constant="22" id="I0l-be-wdx"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4q-qH-szn">
                                 <rect key="frame" x="8" y="671" width="57" height="57"/>
                                 <constraints>
@@ -57,13 +50,19 @@
                                     <segue destination="dv8-El-TPX" kind="show" id="iYX-5n-bj7"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="WhiteDot" translatesAutoresizingMaskIntoConstraints="NO" id="Mm6-wn-O68">
+                                <rect key="frame" x="156" y="256" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="J2L-5N-lUt"/>
+                                    <constraint firstAttribute="height" constant="22" id="UXR-fB-W6A"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c4q-qH-szn" secondAttribute="bottom" constant="8" id="4Jx-Rz-B6R"/>
-                            <constraint firstItem="FQr-R5-H4R" firstAttribute="top" secondItem="Mm6-wn-O68" secondAttribute="bottom" constant="79" id="6NH-2d-lfx"/>
+                            <constraint firstItem="Mm6-wn-O68" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-40" id="6So-b2-N5V"/>
                             <constraint firstItem="c4q-qH-szn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="B4r-81-wrB"/>
-                            <constraint firstItem="Mm6-wn-O68" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="137" id="BdS-aG-Y6P"/>
                             <constraint firstItem="FQr-R5-H4R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cHP-Yn-S1J"/>
                             <constraint firstItem="q84-Tn-U8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sZt-dh-7OF"/>
                         </constraints>
@@ -83,11 +82,11 @@
                         <viewControllerLayoutGuide type="bottom" id="dE6-pL-Dbl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7OE-dv-xn1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-7f-G3b">
-                                <rect key="frame" x="20" y="20" width="560" height="73"/>
+                                <rect key="frame" x="20" y="20" width="374" height="73"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="60"/>
                                 <color key="textColor" red="0.96785013090000005" green="0.96785013090000005" blue="0.96785013090000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -119,11 +118,11 @@
                         <viewControllerLayoutGuide type="bottom" id="AvP-G6-wn6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bTE-o7-lHn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MT" translatesAutoresizingMaskIntoConstraints="NO" id="uTt-v0-pCo">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJC-Xx-vBX">
                                 <rect key="frame" x="20" y="216" width="560" height="107"/>
@@ -133,7 +132,7 @@
                                 <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz8-Gh-2fW">
-                                <rect key="frame" x="268" y="347" width="64" height="64"/>
+                                <rect key="frame" x="175" y="415" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Sl8-4l-XqB"/>
                                     <constraint firstAttribute="width" constant="64" id="VrX-CT-hO6"/>
@@ -235,6 +234,6 @@
         <image name="refresh.png" width="305" height="307"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LtI-MZ-vWe"/>
+        <segue reference="fqS-s3-MkJ"/>
     </inferredMetricsTieBreakers>
 </document>
