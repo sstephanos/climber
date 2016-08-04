@@ -211,7 +211,7 @@
 				TargetAttributes = {
 					D0B5C6771D4BD0F10074EFBE = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = U88J47P9BM;
+						DevelopmentTeam = M7Q29F7L9F;
 					};
 					D0B5C68B1D4BD0F20074EFBE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -429,7 +429,7 @@
 				INFOPLIST_FILE = Climber/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Daniel.Climber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Teddy.Climber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -444,7 +444,7 @@
 				INFOPLIST_FILE = Climber/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Daniel.Climber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Teddy.Climber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
