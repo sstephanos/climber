@@ -28,6 +28,8 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     var canSwipeRight = true
     var spikeOnRightWall = false
     
+    var canChangeScore = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -184,8 +186,10 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     //====================
     
     func increment() {
-        score += 1
-        scoreCounterLabel.text = String(score)
+        if canChangeScore {
+            score += 1
+            scoreCounterLabel.text = String(score)
+        }
     }
     
     //=========================
@@ -256,6 +260,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     
     func rightWallDeath() {
         if canSwipeLeft && spikeOnRightWall {
+            canChangeScore = false
             performSegueWithIdentifier("EndGame", sender: nil)
         }
     }
@@ -266,6 +271,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     
     func leftWallDeath() {
         if canSwipeRight {
+            canChangeScore = false
             performSegueWithIdentifier("EndGame", sender: nil)
         }
     }
