@@ -37,7 +37,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         // Create walls and ball
         //======================
         
-        wall1 = UIView(frame: CGRectMake(0, 0, view.frame.width / 4, view.frame.height))
+        wall1 = UIView(frame: CGRectMake(0, 0, view.frame.width * 0.25, view.frame.height))
         wall1.backgroundColor = UIColor.darkGrayColor()
         view.addSubview(wall1)
         
@@ -46,7 +46,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         wall2.backgroundColor = UIColor.darkGrayColor()
         view.addSubview(wall2)
         
-        ball = UIView(frame: CGRectMake(view.center.x - view.frame.width / 4.07, view.frame.width + 150, 26, 26))
+        ball = UIView(frame: CGRectMake(view.frame.width / 4, view.frame.width + 150, 26, 26))
         ball.backgroundColor = UIColor.whiteColor()
         ball.layer.cornerRadius = 13
         ball.clipsToBounds = true
@@ -158,7 +158,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Left) {
             if (!canSwipeLeft) { return }
             //print("Swipe Left")
-            let ballPosition = CGPointMake(self.ball.frame.origin.x - view.frame.width / 2.34, self.ball.frame.origin.y)
+            let ballPosition = CGPointMake(self.wall1.frame.width, self.ball.frame.origin.y)
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake(ballPosition.x, ballPosition.y, self.ball.frame.size.width, self.ball.frame.size.height)
                 self.dynamicAnimator.updateItemUsingCurrentState(self.ball)
@@ -170,7 +170,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.direction == .Right) {
             if (!canSwipeRight) { return }
             //print("Swipe Right")
-            let ballPosition = CGPointMake(self.ball.frame.origin.x + view.frame.width / 2.34, self.ball.frame.origin.y)
+            let ballPosition = CGPointMake(self.view.frame.width - (self.wall2.frame.width + 26), self.ball.frame.origin.y)
             UIView.animateWithDuration(0.3, animations: {
                 self.ball.frame = CGRectMake(ballPosition.x, ballPosition.y, self.ball.frame.size.width, self.ball.frame.size.height)
                 self.dynamicAnimator.updateItemUsingCurrentState(self.ball)
@@ -253,6 +253,8 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     //============================
     // Collision Behavior Function + Timer for checking the collision
     //============================
+    
+    //Reason for double view controller: On the right side, when two spikes spawn right after another and the first hits you, the second somehow still hits you too. Maybe solve this with a canDie boolean
     
     func handleRightWallDeathTimer() {
         _ = NSTimer.scheduledTimerWithTimeInterval(0.35, target: self, selector: #selector(GameViewController.rightWallDeath), userInfo: nil, repeats: true)
