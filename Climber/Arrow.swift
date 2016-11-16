@@ -12,27 +12,27 @@ class Arrow: UIView {
     
     var collided = false
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let layerHeight = self.layer.frame.height
         let layerWidth = self.layer.frame.width
         
         let bezierPath = UIBezierPath()
-        bezierPath.moveToPoint(CGPointMake(0, layerHeight / 2)) //arrow point
-        bezierPath.addLineToPoint(CGPointMake(layerWidth / 3, 0))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth / 3 + 2.12, 2.12))
-        bezierPath.addLineToPoint(CGPointMake(6.0, layerHeight / 2 - 1.5))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth, layerHeight / 2 - 1.5))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth, layerHeight / 2 + 1.5))
-        bezierPath.addLineToPoint(CGPointMake(6.0, layerHeight / 2 + 1.5))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth / 3 + 2.12, layerHeight - 2.12))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth / 3, layerHeight))
-        bezierPath.closePath()
+        bezierPath.move(to: CGPoint(x: 0, y: layerHeight / 2)) //arrow point
+        bezierPath.addLine(to: CGPoint(x: layerWidth / 3, y: 0))
+        bezierPath.addLine(to: CGPoint(x: layerWidth / 3 + 2.12, y: 2.12))
+        bezierPath.addLine(to: CGPoint(x: 6.0, y: layerHeight / 2 - 1.5))
+        bezierPath.addLine(to: CGPoint(x: layerWidth, y: layerHeight / 2 - 1.5))
+        bezierPath.addLine(to: CGPoint(x: layerWidth, y: layerHeight / 2 + 1.5))
+        bezierPath.addLine(to: CGPoint(x: 6.0, y: layerHeight / 2 + 1.5))
+        bezierPath.addLine(to: CGPoint(x: layerWidth / 3 + 2.12, y: layerHeight - 2.12))
+        bezierPath.addLine(to: CGPoint(x: layerWidth / 3, y: layerHeight))
+        bezierPath.close()
         
-        UIColor.darkGrayColor().setFill()
+        UIColor.darkGray.setFill()
         bezierPath.fill()
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = bezierPath.CGPath
+        shapeLayer.path = bezierPath.cgPath
         self.layer.mask = shapeLayer
         
     }

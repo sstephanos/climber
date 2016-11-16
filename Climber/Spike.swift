@@ -12,22 +12,22 @@ class Spike: UIView {
     
     var spawned = false
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let layerHeight = self.layer.frame.height
         let layerWidth = self.layer.frame.width
         
         let bezierPath = UIBezierPath()
-        bezierPath.moveToPoint(CGPointMake(0, layerHeight / 2))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth / 2, 0))
-        bezierPath.addLineToPoint(CGPoint(x: layerWidth, y: layerHeight / 2))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth / 2, layerHeight))
-        bezierPath.closePath()
+        bezierPath.move(to: CGPoint(x: 0, y: layerHeight / 2))
+        bezierPath.addLine(to: CGPoint(x: layerWidth / 2, y: 0))
+        bezierPath.addLine(to: CGPoint(x: layerWidth, y: layerHeight / 2))
+        bezierPath.addLine(to: CGPoint(x: layerWidth / 2, y: layerHeight))
+        bezierPath.close()
         
-        UIColor.blackColor().setFill()
+        UIColor.black.setFill()
         bezierPath.fill()
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = bezierPath.CGPath
+        shapeLayer.path = bezierPath.cgPath
         self.layer.mask = shapeLayer
         
     }

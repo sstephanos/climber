@@ -12,26 +12,26 @@ class ArrowShooter: UIView {
     
     var arrow = Arrow()
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let layerWidth = self.layer.frame.width
         let layerHeight = self.layer.frame.height
         
         let bezierPath = UIBezierPath()
-        bezierPath.moveToPoint(CGPointMake(0, 0))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth, 0))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth, layerHeight))
-        bezierPath.addLineToPoint(CGPointMake(0, layerHeight))
-        bezierPath.addLineToPoint(CGPointMake(0, layerHeight - 5.0))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth - 5.0, layerHeight - 5.0))
-        bezierPath.addLineToPoint(CGPointMake(layerWidth - 5.0, 5.0))
-        bezierPath.addLineToPoint(CGPointMake(0, 5.0))
-        bezierPath.closePath()
+        bezierPath.move(to: CGPoint(x: 0, y: 0))
+        bezierPath.addLine(to: CGPoint(x: layerWidth, y: 0))
+        bezierPath.addLine(to: CGPoint(x: layerWidth, y: layerHeight))
+        bezierPath.addLine(to: CGPoint(x: 0, y: layerHeight))
+        bezierPath.addLine(to: CGPoint(x: 0, y: layerHeight - 5.0))
+        bezierPath.addLine(to: CGPoint(x: layerWidth - 5.0, y: layerHeight - 5.0))
+        bezierPath.addLine(to: CGPoint(x: layerWidth - 5.0, y: 5.0))
+        bezierPath.addLine(to: CGPoint(x: 0, y: 5.0))
+        bezierPath.close()
         
-        UIColor.blueColor().setFill()
+        UIColor.blue.setFill()
         bezierPath.fill()
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = bezierPath.CGPath
+        shapeLayer.path = bezierPath.cgPath
         self.layer.mask = shapeLayer
         
     }
@@ -48,15 +48,15 @@ class ArrowShooter: UIView {
     func commonInit() {
     }
 
-    func reload(view: UIView) {
-        arrow = Arrow(frame: CGRectMake(self.frame.minX - 20.0, self.frame.minY, 40, 20))
+    func reload(_ view: UIView) {
+        arrow = Arrow(frame: CGRect(x: self.frame.minX - 20.0, y: self.frame.minY, width: 40, height: 20))
         view.addSubview(arrow)
     }
     
     
     // Use this func to check if center of arrow, tip(minX), and target's center are in line
     // This will also make sure that the arrow is not backwards
-    internal func checkInLineAndInOrder(pointOne: CGPoint, pointTwo: CGPoint, pointThree: CGPoint) -> String {
+    internal func checkInLineAndInOrder(_ pointOne: CGPoint, pointTwo: CGPoint, pointThree: CGPoint) -> String {
         let slope = (pointOne.y - pointTwo.y) / (pointOne.x - pointTwo.x)
         let yIntercept = pointOne.y - slope * pointOne.x
         if pointThree.y == slope * pointThree.x + yIntercept {
@@ -79,8 +79,8 @@ class ArrowShooter: UIView {
     }
     
     
-    func shoot(targetView: UIView, dynamicAnimator: UIDynamicAnimator) {
-        let arrowPoint = CGPointMake(arrow.frame.minX, arrow.center.y)
+    func shoot(_ targetView: UIView, dynamicAnimator: UIDynamicAnimator) {
+        let arrowPoint = CGPoint(x: arrow.frame.minX, y: arrow.center.y)
         let targetPoint = targetView.center
         let arrowTargetDist = sqrt(
             pow(arrowPoint.x - targetPoint.x, 2) +
